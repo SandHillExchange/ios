@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var companies = [Company]()
+    
+    @IBAction func marketBtn(sender: UIButton) {
+        getMarketData();
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +24,50 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "marketSegue") {
+            let marketVC:MarketViewController = segue.destinationViewController as! MarketViewController
+            let data = sender as! [(Company)]
+            marketVC.companies = data
+        }
+    }
+    func getMarketData() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: MARKET_URL)!
+        let request = NSURLRequest(URL: url)
+        
+        let task = session.dataTaskWithRequest(request) {data, response, downloadError in
+            if let error = downloadError {
+                println("Could not complete the request \(error)")
+            } else {
+                /* 5 - Success! Parse the data */
+                var parsingError: NSError? = nil
+                let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                
+                //println(parsedResult)
+                if let marketDictionary = parsedResult.valueForKey("data") as? NSArray {
+                    
+                    for m in marketDictionary {
+                        var c = Company()
+                        c.logoUrl = m[0] as! String
+                        c.key = m[1] as! String
+                        c.symbol = m[2] as! String
+                        c.name = m[3] as! String
+                        c.lastPrice = m[4] as! Float
+                        self.companies.append(c)
+                    }
+                    self.performSegueWithIdentifier("marketSegue", sender: self.companies)
+                    
+                } else {
+                    println("Cant find key 'data' in \(parsedResult)")
+                }
+            }
+        }
+        
+        /* 9 - Resume (execute) the task */
+        task.resume()
     }
 
 

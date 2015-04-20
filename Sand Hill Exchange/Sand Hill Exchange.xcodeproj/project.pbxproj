@@ -13,8 +13,8 @@
 		3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */; };
 		3AA29EDD1AE4498700A906D8 /* Sand_Hill_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EDC1AE4498700A906D8 /* Sand_Hill_ExchangeTests.swift */; };
 		3AA29EE71AE44C8100A906D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA29EE61AE44C8100A906D8 /* Images.xcassets */; };
-		3AA29EE91AE4533F00A906D8 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EE81AE4533F00A906D8 /* MarketViewController.swift */; };
 		3AA29EEB1AE461FA00A906D8 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EEA1AE461FA00A906D8 /* CompanyModel.swift */; };
+		3AA29EF51AE4903500A906D8 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EF41AE4903500A906D8 /* MarketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		3AA29EDB1AE4498700A906D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA29EDC1AE4498700A906D8 /* Sand_Hill_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sand_Hill_ExchangeTests.swift; sourceTree = "<group>"; };
 		3AA29EE61AE44C8100A906D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3AA29EE81AE4533F00A906D8 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		3AA29EEA1AE461FA00A906D8 /* CompanyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
+		3AA29EF41AE4903500A906D8 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketViewController.swift; path = ../MarketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +81,12 @@
 		3AA29EC01AE4498700A906D8 /* Sand Hill Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				3AA29EF41AE4903500A906D8 /* MarketViewController.swift */,
 				3AA29EE61AE44C8100A906D8 /* Images.xcassets */,
 				3AA29EC31AE4498700A906D8 /* AppDelegate.swift */,
 				3AA29EC81AE4498700A906D8 /* ViewController.swift */,
 				3AA29ECA1AE4498700A906D8 /* Main.storyboard */,
 				3AA29EEA1AE461FA00A906D8 /* CompanyModel.swift */,
-				3AA29EE81AE4533F00A906D8 /* MarketViewController.swift */,
 				3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */,
 				3AA29EC11AE4498700A906D8 /* Supporting Files */,
 			);
@@ -218,9 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA29EF51AE4903500A906D8 /* MarketViewController.swift in Sources */,
 				3AA29EC91AE4498700A906D8 /* ViewController.swift in Sources */,
 				3AA29EEB1AE461FA00A906D8 /* CompanyModel.swift in Sources */,
-				3AA29EE91AE4533F00A906D8 /* MarketViewController.swift in Sources */,
 				3AA29EC41AE4498700A906D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,8 +27,11 @@
                                 <state key="normal" title="Market">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="150" y="147" width="48" height="30"/>
+                                </variation>
                                 <connections>
-                                    <segue destination="HAn-zX-m9d" kind="show" id="tJW-gf-Baa"/>
+                                    <action selector="marketBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D45-NA-Zyf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -40,62 +43,40 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sand Hill Exchange" id="RB4-0w-vMq"/>
+                    <connections>
+                        <segue destination="Pev-64-hl3" kind="show" identifier="marketSegue" id="DTT-Lv-yrf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="273"/>
         </scene>
         <!--Market View Controller-->
-        <scene sceneID="qTq-ea-6Cg">
+        <scene sceneID="3B3-9c-Hry">
             <objects>
-                <tableViewController id="HAn-zX-m9d" customClass="MarketViewController" customModule="Sand_Hill_Exchange" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Abg-Cn-Eo6">
+                <viewController id="Pev-64-hl3" customClass="MarketViewController" customModule="Sand_Hill_Exchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dis-YA-SuB"/>
+                        <viewControllerLayoutGuide type="bottom" id="q7n-kk-F4l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4YD-VR-Sid">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-eq-iog">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyCell" id="G26-jH-uGE">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G26-jH-uGE" id="Abi-lM-oYX">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwU-Hu-MhG">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="43"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-ci-vBg">
-                                            <rect key="frame" x="147" y="11" width="59" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyS-Cx-Gar">
-                                            <rect key="frame" x="269" y="11" width="46" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-ar-iXM">
-                                            <rect key="frame" x="403" y="11" width="40" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HAn-zX-m9d" id="ab2-Yc-49E"/>
-                            <outlet property="delegate" destination="HAn-zX-m9d" id="btC-5Q-cPJ"/>
-                        </connections>
-                    </tableView>
+                    </view>
                     <connections>
-                        <outlet property="marketTableView" destination="Abg-Cn-Eo6" id="PDK-Pi-A2S"/>
+                        <outlet property="tableView" destination="2u4-eq-iog" id="Ewf-BQ-Bt0"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbg-BI-sJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8G-ya-EMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653" y="273"/>
+            <point key="canvasLocation" x="1642" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">
