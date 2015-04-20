@@ -15,10 +15,11 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     var companies = [Company]()
     
+    let marketCellIdentifier = "MarketCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+  
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -32,19 +33,36 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(companies.count)
         return companies.count
     }
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            
+            return marketCellAtIndexPath(indexPath)
+            /*
             let cell = tableView.dequeueReusableCellWithIdentifier("cell",
                 forIndexPath: indexPath) as! UITableViewCell
 
             let row = indexPath.row
             cell.textLabel?.text = companies[row].symbol
             return cell
+            */
     }
+    
+    func marketCellAtIndexPath(indexPath:NSIndexPath) -> MarketCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(marketCellIdentifier) as! MarketCell
+        
+        let row = indexPath.row
+        cell.symbolLabel.text = companies[row].symbol
+        cell.nameLabel.text = companies[row].name
+        if let var label = companies[row].lastPrice{
+            println(companies[row].lastPrice)
+            cell.priceLabel.text = NSString(format: "%.2f", companies[row].lastPrice) as String
+        } else { cell.priceLabel.text = "0.00" }
+        return cell
+    }
+    
 
     /*
     // MARK: - Navigation
