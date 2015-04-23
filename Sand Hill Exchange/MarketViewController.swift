@@ -8,8 +8,6 @@
 
 import UIKit
 
-let MARKET_URL: String = "https://www.b00st.vc/market/json"
-
 class MarketViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -57,21 +55,29 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
         cell.symbolLabel.text = companies[row].symbol
         cell.nameLabel.text = companies[row].name
         if let var label = companies[row].lastPrice{
-            println(companies[row].lastPrice)
             cell.priceLabel.text = NSString(format: "%.2f", companies[row].lastPrice) as String
         } else { cell.priceLabel.text = "0.00" }
         return cell
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        // sender is the tapped `UITableViewCell`
+        let cell = sender as! MarketCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        
+        // load the selected model
+        let item = self.companies[indexPath!.row]
+        
+        println(indexPath!.row)
+        if let destination:CompanyViewController = segue.destinationViewController as? CompanyViewController {
+           destination.company = item
+        }
     }
-    */
+
 
 }

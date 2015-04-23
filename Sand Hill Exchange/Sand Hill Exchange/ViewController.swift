@@ -8,6 +8,9 @@
 
 import UIKit
 
+let BASE_URL: String = "https://www.b00st.vc"
+let MARKET_URL: String = BASE_URL + "/market/json"
+
 class ViewController: UIViewController {
 
     var companies = [Company]()

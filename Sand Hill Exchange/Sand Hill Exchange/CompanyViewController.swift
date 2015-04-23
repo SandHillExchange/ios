@@ -10,10 +10,24 @@ import UIKit
 
 class CompanyViewController: UIViewController {
 
+    var company = Company()
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var logoImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        println(company.name)
+        nameLabel.text = company.name
+        
+        let imgString = BASE_URL + "/gcs/" + company.logoUrl
+        let imgURL = NSURL(string: imgString)
 
-        // Do any additional setup after loading the view.
+        let data = NSData(contentsOfURL: imgURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+
+        logoImage.image = UIImage(data: data!)
+
     }
 
     override func didReceiveMemoryWarning() {
