@@ -36,14 +36,23 @@ class CompanyViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        // sender is the tapped `UIButton`
+        let action = sender as! UIButton
+        
+        if let destination:OrderViewController = segue.destinationViewController as? OrderViewController {
+            destination.company = company
+            if let text = action.titleLabel?.text {
+                if (text=="BUY") {
+                    destination.buySell = true
+                } else {
+                    destination.buySell = false
+                }
+            }
+        }
     }
-    */
 
 }

@@ -14,4 +14,6 @@ class Company: NSObject{
     var key: String!
     var symbol: String!
     var lastPrice: Float!
+    
+    //companies.query(["completed": false], error: nil)
 }
