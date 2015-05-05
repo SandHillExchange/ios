@@ -134,12 +134,12 @@
                     <connections>
                         <outlet property="emailField" destination="4ra-Pz-BRF" id="87o-5P-LHM"/>
                         <outlet property="pwField" destination="Wvf-aM-kh4" id="xby-wG-W6Q"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="DLv-1z-f47"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="gotoDash" id="w9k-Vw-Dze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9z-4U-2nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="-399"/>
+            <point key="canvasLocation" x="771" y="-399"/>
         </scene>
         <!--Sand Hill Exchange-->
         <scene sceneID="tne-QT-ifu">

@@ -16,14 +16,13 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var pwField: UITextField!
     
-    let MyKeychainWrapper = KeychainWrapper()
-    let createLoginButtonTag = 0
-    let loginButtonTag = 1
+    let shxKeychainWrapper = KeychainWrapper()
     
     @IBOutlet weak var loginButton: UIButton!
         
     
     @IBAction func emailField(sender: UITextField) {
+        // disable login button until this has stuff
     }
     
     
@@ -36,20 +35,22 @@ class LoginController: UIViewController {
 
         // check for stored login
         let hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
-        
-        // go ahead and log in
-        if hasLogin {
-            loginButton.setTitle("Login", forState: UIControlState.Normal)
-            loginButton.tag = loginButtonTag
-        } else {
-            loginButton.setTitle("Create", forState: UIControlState.Normal)
-            loginButton.tag = createLoginButtonTag
-        }
-        
         // set the username field to what is saved in NSUserDefaults
-        if let storedUsername = NSUserDefaults.standardUserDefaults().valueForKey("username") as? String {
-            emailField.text = storedUsername as String
+        let storedEmail = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String
+        let storedPW = NSUserDefaults.standardUserDefaults().valueForKey(kSecValueData as String) as? String
+        
+        if (hasLogin && storedEmail != nil && storedPW != nil) {
+            
+            // authenticate with stored login
+            self.checkLogin(storedEmail!, pw: storedPW!) { (succeeded: Bool, msg: String) -> () in
+                if(succeeded) {
+                    self.performSegueWithIdentifier("gotoDash", sender: self)
+                } else {
+                    self.emailField.text = storedEmail
+                }
+            }
         }
+        
     }
     
     
@@ -87,7 +88,21 @@ class LoginController: UIViewController {
                 // check and make sure that json has a value using optional binding.
                 if let parseJSON = json {
                     var status = parseJSON["status"] as? String
-                    if (status=="ok") { postCompleted(succeeded: true, msg: "ok") }
+                    if (status=="ok") {
+                        // save password
+                        let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
+                        if hasLoginKey == false {
+                            NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
+                        }
+                        
+                        // save password
+                        self.shxKeychainWrapper.mySetObject(pw, forKey:kSecValueData)
+                        self.shxKeychainWrapper.writeToKeychain()
+                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        
+                        postCompleted(succeeded: true, msg: "ok")
+                    }
                 }
                 else {
                     let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
@@ -119,38 +134,21 @@ class LoginController: UIViewController {
         emailField.resignFirstResponder()
         pwField.resignFirstResponder()
         
-        // need to create new login instead of just log in
-        if sender.tag == createLoginButtonTag {
-            
-            // see if pw has been saved
-            let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
-            if hasLoginKey == false {
-                NSUserDefaults.standardUserDefaults().setValue(self.emailField.text, forKey: "email")
+        self.checkLogin(emailField.text, pw: pwField.text) { (succeeded: Bool, msg: String) -> () in
+            println(succeeded)
+            println(msg)
+            if(succeeded) {
+                self.performSegueWithIdentifier("gotoDash", sender: self)
+            } else {
+                var alert = UIAlertView()
+                alert.title = "Login Problem"
+                alert.message = "Wrong username or password."
+                alert.addButtonWithTitle("Sucks")
+                alert.show()
+                self.pwField.text = ""
             }
-            
-            // save password
-            MyKeychainWrapper.mySetObject(pwField.text, forKey:kSecValueData)
-            MyKeychainWrapper.writeToKeychain()
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            loginButton.tag = loginButtonTag
-            
-            self.performSegueWithIdentifier("dismissLogin", sender: self)
-        } else if sender.tag == loginButtonTag { //already have acct, log in
-            // 6.
-            self.checkLogin(emailField.text, pw: pwField.text) { (succeeded: Bool, msg: String) -> () in
-                if(succeeded) {
-                    self.performSegueWithIdentifier("dismissLogin", sender: self)
-                } else {
-                    var alert = UIAlertView()
-                    alert.title = "Login Problem"
-                    alert.message = "Wrong username or password."
-                    alert.addButtonWithTitle("Sucks")
-                    alert.show()
-                }
-            }
-        
         }
+        
     }
 
 
