@@ -37,7 +37,7 @@ class LoginController: UIViewController {
         let hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
         // set the username field to what is saved in NSUserDefaults
         let storedEmail = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String
-        let storedPW = NSUserDefaults.standardUserDefaults().valueForKey(kSecValueData as String) as? String
+        let storedPW = shxKeychainWrapper.myObjectForKey(kSecValueData) as? String
         
         if (hasLogin && storedEmail != nil && storedPW != nil) {
             
@@ -89,19 +89,16 @@ class LoginController: UIViewController {
                 if let parseJSON = json {
                     var status = parseJSON["status"] as? String
                     if (status=="ok") {
-                        // save password
-                        let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
-                        if hasLoginKey == false {
-                            NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
-                        }
                         
                         // save password
                         self.shxKeychainWrapper.mySetObject(pw, forKey:kSecValueData)
                         self.shxKeychainWrapper.writeToKeychain()
+                        NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
                         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
                         NSUserDefaults.standardUserDefaults().synchronize()
                         
                         postCompleted(succeeded: true, msg: "ok")
+                        return
                     }
                 }
                 else {
@@ -135,8 +132,6 @@ class LoginController: UIViewController {
         pwField.resignFirstResponder()
         
         self.checkLogin(emailField.text, pw: pwField.text) { (succeeded: Bool, msg: String) -> () in
-            println(succeeded)
-            println(msg)
             if(succeeded) {
                 self.performSegueWithIdentifier("gotoDash", sender: self)
             } else {
