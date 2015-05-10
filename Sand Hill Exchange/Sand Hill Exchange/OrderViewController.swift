@@ -12,6 +12,7 @@ class OrderViewController: UIViewController {
     
     var company = Company()
     var buySell = Bool()  // true if buy, false if sell
+    var storedKey = String()
 
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var estCostLabel: UILabel!
@@ -22,7 +23,10 @@ class OrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // get userkey
+        var tempKey: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("userkey")
+        if (tempKey != nil) { storedKey = tempKey as! String}
+        
     }
 
     override func didReceiveMemoryWarning() {

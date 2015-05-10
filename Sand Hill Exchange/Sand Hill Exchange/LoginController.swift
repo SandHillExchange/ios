@@ -11,6 +11,8 @@ import CoreData
 
 let LOGIN_URL: String = BASE_URL + "/account/signin"
 
+
+
 class LoginController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
@@ -29,26 +31,33 @@ class LoginController: UIViewController {
     @IBAction func pwField(sender: UITextField) {
     }
     
+    var storedKey : String = ""
+    var hasLogin : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // check for stored login
-        let hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
+        hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
         // set the username field to what is saved in NSUserDefaults
-        let storedEmail = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String
+        let storedEmail: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("email")
         let storedPW = shxKeychainWrapper.myObjectForKey(kSecValueData) as? String
+        var tempKey: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("userkey")
+        if (tempKey != nil) { storedKey = tempKey as! String}
         
         if (hasLogin && storedEmail != nil && storedPW != nil) {
             
             // authenticate with stored login
-            self.checkLogin(storedEmail!, pw: storedPW!) { (succeeded: Bool, msg: String) -> () in
+            self.checkLogin(storedEmail! as! String, pw: storedPW!) { (succeeded: Bool, msg: String) -> () in
                 if(succeeded) {
                     self.performSegueWithIdentifier("gotoDash", sender: self)
                 } else {
-                    self.emailField.text = storedEmail
+                    self.emailField.text = storedEmail as! String
+                    NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasLoginKey")
                 }
             }
+        } else {
+            //wait
         }
         
     }
@@ -90,13 +99,17 @@ class LoginController: UIViewController {
                     var status = parseJSON["status"] as? String
                     if (status=="ok") {
                         
-                        // save password
-                        self.shxKeychainWrapper.mySetObject(pw, forKey:kSecValueData)
-                        self.shxKeychainWrapper.writeToKeychain()
-                        NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
-                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
-                        NSUserDefaults.standardUserDefaults().synchronize()
+                        var userkey = parseJSON["userkey"] as? String
                         
+                        if !self.hasLogin {
+                            // save password if not done before
+                            self.shxKeychainWrapper.mySetObject(pw, forKey:kSecValueData)
+                            self.shxKeychainWrapper.writeToKeychain()
+                            NSUserDefaults.standardUserDefaults().setValue(email, forKey: "email")
+                            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
+                            NSUserDefaults.standardUserDefaults().setValue(userkey, forKey: "userkey")
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                        }
                         postCompleted(succeeded: true, msg: "ok")
                         return
                     }

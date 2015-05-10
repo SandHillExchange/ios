@@ -14,14 +14,27 @@ let MARKET_URL: String = BASE_URL + "/market/json"
 class ViewController: UIViewController {
 
     var companies = [Company]()
+    var fetchDone = false
     
     @IBAction func marketBtn(sender: UIButton) {
-        getMarketData();
+        if fetchDone {
+            self.performSegueWithIdentifier("marketSegue", sender: self.companies)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // download portfolio info while view is loading
+        
+        // download market data while view is loading
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
+            self.getMarketData()
+            dispatch_async(dispatch_get_main_queue()) {
+                return
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +74,7 @@ class ViewController: UIViewController {
                         c.lastPrice = m[4] as! Float
                         self.companies.append(c)
                     }
-                    self.performSegueWithIdentifier("marketSegue", sender: self.companies)
+                    self.fetchDone = true
                     
                 } else {
                     println("Cant find key 'data' in \(parsedResult)")
