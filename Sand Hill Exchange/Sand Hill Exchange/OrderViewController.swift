@@ -17,7 +17,22 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var estCostLabel: UILabel!
 
+    @IBOutlet weak var priceField: UITextField!
+    
+    @IBOutlet weak var qtyField: UITextField!
+    
+    @IBAction func reviewBtn(sender: AnyObject) {
+        
+    }
+    
     @IBAction func qtyField(sender: UITextField) {
+        updateCost()
+        println(qtyField.text)
+    }
+    
+    @IBAction func priceField(sender: UITextField) {
+        updateCost()
+        println(priceField.text)
     }
     
     override func viewDidLoad() {
@@ -34,6 +49,15 @@ class OrderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateCost() {
+        var qty = NSString(string: qtyField.text).floatValue
+        var price = NSString(string: priceField.text).floatValue
+        
+        var estCost = qty * price
+        estCostLabel.text = NSString(format: "%.2f", estCost) as String
+    
+        
+    }
 
     /*
     // MARK: - Navigation

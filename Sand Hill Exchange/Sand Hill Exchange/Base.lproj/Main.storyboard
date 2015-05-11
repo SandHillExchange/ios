@@ -212,11 +212,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgt-le-DIj">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="HUy-0g-T8b"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="172" y="14" width="46" height="21"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="HUy-0g-T8b"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="HUy-0g-T8b"/>
+                                                        </mask>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-4C-g51">
@@ -224,7 +234,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                                         <rect key="frame" x="8" y="14" width="59" height="21"/>
                                                     </variation>
                                                 </label>
@@ -233,14 +243,19 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="341" y="14" width="40" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Y0l-IQ-5bF" secondAttribute="trailing" constant="212" id="3IN-SU-K5e"/>
+                                                <constraint firstItem="Y0l-IQ-5bF" firstAttribute="top" secondItem="hgt-le-DIj" secondAttribute="top" id="5Yu-GP-9d0"/>
+                                                <constraint firstItem="Y0l-IQ-5bF" firstAttribute="baseline" secondItem="TKd-4C-g51" secondAttribute="baseline" id="83h-wI-E71"/>
+                                                <constraint firstItem="hgt-le-DIj" firstAttribute="leading" secondItem="oV1-7B-lIb" secondAttribute="leading" constant="172" id="9kt-Fj-xmG"/>
+                                                <constraint firstItem="Y0l-IQ-5bF" firstAttribute="bottom" secondItem="hgt-le-DIj" secondAttribute="bottom" id="Ecb-NW-gJJ"/>
                                                 <constraint firstAttribute="centerX" secondItem="Y0l-IQ-5bF" secondAttribute="centerX" constant="-61" id="Vsx-ne-4Mq"/>
+                                                <constraint firstItem="Y0l-IQ-5bF" firstAttribute="bottom" secondItem="oV1-7B-lIb" secondAttribute="bottomMargin" id="gYb-iG-WPU"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -249,8 +264,13 @@
                                                     <exclude reference="Y0l-IQ-5bF"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="9kt-Fj-xmG"/>
                                                     <exclude reference="3IN-SU-K5e"/>
+                                                    <exclude reference="5Yu-GP-9d0"/>
+                                                    <exclude reference="83h-wI-E71"/>
+                                                    <exclude reference="Ecb-NW-gJJ"/>
                                                     <exclude reference="Vsx-ne-4Mq"/>
+                                                    <exclude reference="gYb-iG-WPU"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -260,8 +280,13 @@
                                                     <include reference="Y0l-IQ-5bF"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="9kt-Fj-xmG"/>
                                                     <include reference="3IN-SU-K5e"/>
+                                                    <include reference="5Yu-GP-9d0"/>
+                                                    <include reference="83h-wI-E71"/>
+                                                    <include reference="Ecb-NW-gJJ"/>
                                                     <include reference="Vsx-ne-4Mq"/>
+                                                    <include reference="gYb-iG-WPU"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -386,6 +411,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="qtyField:" destination="mBz-C0-gM7" eventType="valueChanged" id="Dg8-W4-QKr"/>
+                                    <action selector="qtyField:" destination="mBz-C0-gM7" eventType="editingChanged" id="i2C-d2-qbA"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-e3-jhD">
@@ -395,6 +421,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="287" y="152" width="97" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="priceField:" destination="mBz-C0-gM7" eventType="editingChanged" id="oCV-8k-gBo"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares of " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4G5-W9-tjQ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -449,6 +478,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="171" y="266" width="50" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="reviewBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="D82-9N-S1o"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up to submit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG4-wk-orP">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -490,12 +522,31 @@
                     </view>
                     <connections>
                         <outlet property="estCostLabel" destination="Q1S-cz-DHd" id="dLT-gO-bVf"/>
+                        <outlet property="priceField" destination="2HP-e3-jhD" id="Dak-Ld-dme"/>
+                        <outlet property="qtyField" destination="xHE-Im-E7Y" id="LZj-Bl-OjE"/>
                         <outlet property="symbolLabel" destination="YQw-c9-XTT" id="dTK-1S-Wrw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1x-xc-zps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3117" y="267"/>
+        </scene>
+        <!--Preview Controller-->
+        <scene sceneID="UEN-2c-HTP">
+            <objects>
+                <viewController id="kLR-Nv-Xw3" customClass="PreviewController" customModule="Sand_Hill_Exchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Dz-Zu-uPd"/>
+                        <viewControllerLayoutGuide type="bottom" id="9XM-qi-GKI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bvM-Fs-Leb">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wA-Xr-QTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3843" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">
