@@ -13,6 +13,8 @@ class OrderViewController: UIViewController {
     var company = Company()
     var buySell = Bool()  // true if buy, false if sell
     var storedKey = String()
+    var price : Float = 0.0
+    var qty : Float = 0.0
 
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var estCostLabel: UILabel!
@@ -22,17 +24,24 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var qtyField: UITextField!
     
     @IBAction func reviewBtn(sender: AnyObject) {
+        // create order
+        var order = Order()
+        order.companyKey = company.key
+        order.symbol = company.symbol
+        order.price = price
+        order.qty = Int(qty)
+        
+        // modal review
+        
         
     }
     
     @IBAction func qtyField(sender: UITextField) {
         updateCost()
-        println(qtyField.text)
     }
     
     @IBAction func priceField(sender: UITextField) {
         updateCost()
-        println(priceField.text)
     }
     
     override func viewDidLoad() {
@@ -50,8 +59,8 @@ class OrderViewController: UIViewController {
     }
     
     func updateCost() {
-        var qty = NSString(string: qtyField.text).floatValue
-        var price = NSString(string: priceField.text).floatValue
+        qty = NSString(string: qtyField.text).floatValue
+        price = NSString(string: priceField.text).floatValue
         
         var estCost = qty * price
         estCostLabel.text = NSString(format: "%.2f", estCost) as String
@@ -59,14 +68,16 @@ class OrderViewController: UIViewController {
         
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let navigationController = segue.destinationViewController as! PreviewController
+        navigationController.testString = "hello"
     }
-    */
+
 
 }

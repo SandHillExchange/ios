@@ -10,18 +10,22 @@ import UIKit
 
 class PreviewController: UIViewController {
 
+    var testString:NSString!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        println(self.testString)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    @IBAction func submitBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
+    }
     /*
     // MARK: - Navigation
 
