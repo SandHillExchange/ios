@@ -343,7 +343,7 @@
                                     <rect key="frame" x="59" y="292" width="32" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="mBz-C0-gM7" kind="show" id="m6Q-Nn-mqZ"/>
+                                    <segue destination="mBz-C0-gM7" kind="presentation" modalTransitionStyle="coverVertical" id="m6Q-Nn-mqZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlj-sD-ioP">
@@ -356,7 +356,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="sellBtn:" destination="GSQ-5C-jmU" eventType="touchUpInside" id="xT3-nd-ytZ"/>
-                                    <segue destination="mBz-C0-gM7" kind="show" id="iQQ-cV-el9"/>
+                                    <segue destination="mBz-C0-gM7" kind="presentation" modalTransitionStyle="coverVertical" id="iQQ-cV-el9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -477,7 +477,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="reviewBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="D82-9N-S1o"/>
-                                    <segue destination="kLR-Nv-Xw3" kind="presentation" id="apc-qv-Ihm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe up to submit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG4-wk-orP">
@@ -487,6 +486,24 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="120" y="571" width="198" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHi-So-M6g">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="538" width="47" height="30"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your stupid order!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-Mu-Lp6">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="99" y="461" width="194" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -502,6 +519,8 @@
                                 <exclude reference="Q1S-cz-DHd"/>
                                 <exclude reference="o9h-FF-WBG"/>
                                 <exclude reference="kG4-wk-orP"/>
+                                <exclude reference="ZHi-So-M6g"/>
+                                <exclude reference="EYl-Mu-Lp6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -515,6 +534,8 @@
                                 <include reference="Q1S-cz-DHd"/>
                                 <include reference="o9h-FF-WBG"/>
                                 <include reference="kG4-wk-orP"/>
+                                <include reference="ZHi-So-M6g"/>
+                                <include reference="EYl-Mu-Lp6"/>
                             </mask>
                         </variation>
                     </view>
@@ -528,48 +549,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1x-xc-zps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3117" y="267"/>
-        </scene>
-        <!--Preview Controller-->
-        <scene sceneID="UEN-2c-HTP">
-            <objects>
-                <viewController id="kLR-Nv-Xw3" customClass="PreviewController" customModule="Sand_Hill_Exchange" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Dz-Zu-uPd"/>
-                        <viewControllerLayoutGuide type="bottom" id="9XM-qi-GKI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bvM-Fs-Leb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJt-aO-d8V">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="ok cool">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="337" width="51" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="submitBtn:" destination="kLR-Nv-Xw3" eventType="touchUpInside" id="KIR-kI-akb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lJt-aO-d8V"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="lJt-aO-d8V"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0wA-Xr-QTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3843" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">
@@ -591,6 +570,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m6Q-Nn-mqZ"/>
+        <segue reference="iQQ-cV-el9"/>
     </inferredMetricsTieBreakers>
 </document>

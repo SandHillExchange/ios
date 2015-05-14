@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
+class OrderViewController: UIViewController, UITextFieldDelegate {
     
     var company = Company()
     var buySell = Bool()  // true if buy, false if sell
@@ -46,6 +46,13 @@ class OrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        priceField.delegate = self
+        priceField.keyboardType = UIKeyboardType.DecimalPad
+        
+        qtyField.delegate = self
+        qtyField.keyboardType = UIKeyboardType.NumberPad
+        qtyField.becomeFirstResponder()
 
         // get userkey
         var tempKey: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("userkey")
@@ -75,8 +82,13 @@ class OrderViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let navigationController = segue.destinationViewController as! PreviewController
-        navigationController.testString = "hello"
+
+        // submit order
+        
+        // show confirmation
+        
+        // close both modals
+
     }
 
 
