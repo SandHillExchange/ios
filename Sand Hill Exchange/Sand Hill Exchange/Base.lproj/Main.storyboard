@@ -488,15 +488,6 @@
                                     <rect key="frame" x="120" y="571" width="198" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHi-So-M6g">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="submit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="538" width="47" height="30"/>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your stupid order!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-Mu-Lp6">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -506,6 +497,18 @@
                                     <rect key="frame" x="99" y="461" width="194" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZK-x9-TaO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="171" y="533" width="47" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="submitBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="Veg-8e-yyY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -519,8 +522,8 @@
                                 <exclude reference="Q1S-cz-DHd"/>
                                 <exclude reference="o9h-FF-WBG"/>
                                 <exclude reference="kG4-wk-orP"/>
-                                <exclude reference="ZHi-So-M6g"/>
                                 <exclude reference="EYl-Mu-Lp6"/>
+                                <exclude reference="jZK-x9-TaO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -534,8 +537,8 @@
                                 <include reference="Q1S-cz-DHd"/>
                                 <include reference="o9h-FF-WBG"/>
                                 <include reference="kG4-wk-orP"/>
-                                <include reference="ZHi-So-M6g"/>
                                 <include reference="EYl-Mu-Lp6"/>
+                                <include reference="jZK-x9-TaO"/>
                             </mask>
                         </variation>
                     </view>
@@ -549,6 +552,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1x-xc-zps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3117" y="267"/>
+        </scene>
+        <!--Confirm View Controller-->
+        <scene sceneID="G0O-wn-u2x">
+            <objects>
+                <viewController id="XSS-i6-YZW" customClass="ConfirmViewController" customModule="Sand_Hill_Exchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p1o-NI-As1"/>
+                        <viewControllerLayoutGuide type="bottom" id="QdK-bb-EIw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LgH-a2-V1j">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray, confirmed." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-rT-mxJ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="114" y="265" width="146" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7p-sC-0IV">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Okay cool">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="133" y="323" width="69" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="dismissModals:" destination="XSS-i6-YZW" eventType="touchUpInside" id="q1k-TS-drf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gea-rT-mxJ"/>
+                                <exclude reference="q7p-sC-0IV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gea-rT-mxJ"/>
+                                <include reference="q7p-sC-0IV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Hz-IH-bsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3769.5" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">

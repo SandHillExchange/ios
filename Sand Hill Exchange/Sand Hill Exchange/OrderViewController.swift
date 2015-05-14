@@ -31,9 +31,15 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         order.price = price
         order.qty = Int(qty)
         
-        // modal review
+        // dismiss keyboard for review
+        qtyField.resignFirstResponder()
         
-        
+    }
+
+    
+    @IBAction func submitBtn(sender: AnyObject) {
+        // submit order
+        self.performSegueWithIdentifier("gotoConfirm", sender: self)
     }
     
     @IBAction func qtyField(sender: UITextField) {
@@ -60,6 +66,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,9 +94,11 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         // submit order
         
         // show confirmation
+        let navigationController = segue.destinationViewController as! ConfirmViewController
+        println("show modal")
         
         // close both modals
-
+        //dismissViewControllerAnimated(true, completion: nil)
     }
 
 
