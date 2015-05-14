@@ -94,7 +94,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         // submit order
         
         // show confirmation
-        let navigationController = segue.destinationViewController as! ConfirmViewController
+        //let navigationController = segue.destinationViewController as! ConfirmViewController
         println("show modal")
         
         // close both modals
