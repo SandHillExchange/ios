@@ -38,14 +38,6 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
             return marketCellAtIndexPath(indexPath)
-            /*
-            let cell = tableView.dequeueReusableCellWithIdentifier("cell",
-                forIndexPath: indexPath) as! UITableViewCell
-
-            let row = indexPath.row
-            cell.textLabel?.text = companies[row].symbol
-            return cell
-            */
     }
     
     func marketCellAtIndexPath(indexPath:NSIndexPath) -> MarketCell {

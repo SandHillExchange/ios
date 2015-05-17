@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PortfolioViewController.swift
 //  Sand Hill Exchange
 //
 //  Created by Elaine Ou on 4/19/15.
@@ -12,13 +12,17 @@ let BASE_URL: String = "https://www.b00st.vc"
 let MARKET_URL: String = BASE_URL + "/market/json"
 let PORTFOLIO_URL: String = BASE_URL + "/portfolio/json"
 
-class ViewController: UIViewController {
+class PortfolioViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var companies = [Company]()
     var holdings = [Company]()
     var fetchDone = false
     
+    let marketCellIdentifier = "MarketCell"
+    
     @IBOutlet weak var liquidLabel: UILabel!
+    
+    @IBOutlet weak var portfolioView: UITableView!
     
     @IBAction func marketBtn(sender: UIButton) {
         if fetchDone {
@@ -31,6 +35,10 @@ class ViewController: UIViewController {
         
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")
+        portfolioView.dataSource = self
+        portfolioView.delegate = self
+        portfolioView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         
         // download portfolio info while view is loading
         getPortfolio()
@@ -38,6 +46,36 @@ class ViewController: UIViewController {
         // download market data while view is loading
         getMarketData()
     }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return holdings.count
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            
+            return cellAtIndexPath(indexPath)
+    }
+    func cellAtIndexPath(indexPath:NSIndexPath) -> MarketCell {
+        let cell = portfolioView.dequeueReusableCellWithIdentifier(marketCellIdentifier) as! MarketCell
+        
+        let row = indexPath.row
+
+        cell.psymbolLabel.text = holdings[row].symbol
+        cell.pqtyLabel.text = String(holdings[row].qty)
+        if let var label = holdings[row].quote.lastPrice{
+            cell.ppriceLabel.text = NSString(format: "%.2f", holdings[row].quote.lastPrice) as String
+        } else { cell.ppriceLabel.text = "0.00" }
+        
+        return cell
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,6 +115,7 @@ class ViewController: UIViewController {
                             c.quote = Quote(lastPrice: (p["last_price"] as! NSString).floatValue, dayChange: (p["day_change"] as! NSString).floatValue, volume: 0)
                             self.holdings.append(c)
                         }
+                        self.portfolioView.reloadData()
                     }
                     
                 } else {

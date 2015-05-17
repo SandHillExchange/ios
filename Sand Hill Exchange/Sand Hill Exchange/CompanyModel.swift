@@ -26,6 +26,9 @@ class Company: NSObject{
     var avgPrice: Float!
     
     //companies.query(["completed": false], error: nil)
+    func toDict() -> NSDictionary {
+        return ["symbol": self.symbol, "lastPrice":self.quote.lastPrice]
+    }
     
     override init() {
         /*

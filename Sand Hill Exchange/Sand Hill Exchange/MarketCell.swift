@@ -10,6 +10,10 @@ import UIKit
 
 class MarketCell: UITableViewCell {
 
+    @IBOutlet weak var psymbolLabel: UILabel!
+    @IBOutlet weak var pqtyLabel: UILabel!
+    @IBOutlet weak var ppriceLabel: UILabel!
+    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var symbolLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
