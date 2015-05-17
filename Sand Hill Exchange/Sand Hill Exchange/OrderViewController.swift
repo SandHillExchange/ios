@@ -17,6 +17,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
     var price : Float = 0.0
     var qty : Float = 0.0
 
+    @IBOutlet weak var buySellLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var estCostLabel: UILabel!
 
@@ -49,6 +50,12 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if buySell {
+            buySellLabel.text = "BUY"
+        } else {
+            buySellLabel.text = "SELL"
+        }
         
         priceField.delegate = self
         priceField.keyboardType = UIKeyboardType.DecimalPad

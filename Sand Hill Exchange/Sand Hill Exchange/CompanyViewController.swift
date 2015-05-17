@@ -58,6 +58,7 @@ class CompanyViewController: UIViewController {
     
     /* functions from Order Modal */
     @IBAction func cancelOrder(segue:UIStoryboardSegue) {
+        // canceled
         
     }
     
