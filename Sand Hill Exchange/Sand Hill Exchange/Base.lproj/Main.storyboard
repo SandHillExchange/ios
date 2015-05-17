@@ -222,6 +222,7 @@
                                             <outlet property="ppriceLabel" destination="yX1-Jt-EVw" id="MIT-ga-ax4"/>
                                             <outlet property="pqtyLabel" destination="gtV-xr-jG4" id="iqX-oZ-Ft2"/>
                                             <outlet property="psymbolLabel" destination="bWi-Xd-hje" id="ONz-Qf-JhX"/>
+                                            <segue destination="GSQ-5C-jmU" kind="show" identifier="companySegue" id="rZi-qx-p85"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -732,6 +733,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rZi-qx-p85"/>
         <segue reference="iQQ-cV-el9"/>
     </inferredMetricsTieBreakers>
 </document>
