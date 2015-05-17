@@ -39,7 +39,10 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitBtn(sender: AnyObject) {
         // submit order
-        self.performSegueWithIdentifier("gotoConfirm", sender: self)
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("confirm")
+        self.showViewController(vc as! UIViewController, sender: vc)
+        
+        // self.performSegueWithIdentifier("gotoConfirm", sender: self)
     }
     
     @IBAction func qtyField(sender: UITextField) {
@@ -98,7 +101,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         println("show modal")
         
         // close both modals
-        //dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 
