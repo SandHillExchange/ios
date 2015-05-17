@@ -34,6 +34,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         
         // dismiss keyboard for review
         qtyField.resignFirstResponder()
+        priceField.resignFirstResponder()
         
     }
 
