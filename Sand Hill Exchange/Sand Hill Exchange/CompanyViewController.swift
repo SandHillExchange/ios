@@ -55,4 +55,18 @@ class CompanyViewController: UIViewController {
         }
     }
 
+    
+    /* functions from Order Modal */
+    @IBAction func cancelOrder(segue:UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func confirmOrder(segue:UIStoryboardSegue) {
+        //let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("confirm")
+        //self.showViewController(vc as! UIViewController, sender: vc)
+        //presentViewController(vc, animated: true, completion: nil)
+        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("confirm") as! ConfirmViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
 }

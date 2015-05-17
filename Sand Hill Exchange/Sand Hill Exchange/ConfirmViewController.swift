@@ -12,6 +12,7 @@ class ConfirmViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("here i am")
 
         // Do any additional setup after loading the view.
     }
@@ -22,7 +23,7 @@ class ConfirmViewController: UIViewController {
     }
     
     @IBAction func dismissModals(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+       self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*
@@ -34,5 +35,6 @@ class ConfirmViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

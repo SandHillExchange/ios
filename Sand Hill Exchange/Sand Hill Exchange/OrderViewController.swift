@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class OrderViewController: UIViewController, UITextFieldDelegate {
     
     var company = Company()
@@ -36,14 +37,6 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    
-    @IBAction func submitBtn(sender: AnyObject) {
-        // submit order
-        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("confirm")
-        self.showViewController(vc as! UIViewController, sender: vc)
-        
-        // self.performSegueWithIdentifier("gotoConfirm", sender: self)
-    }
     
     @IBAction func qtyField(sender: UITextField) {
         updateCost()
@@ -93,16 +86,16 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-
-        // submit order
         
         // show confirmation
-        //let navigationController = segue.destinationViewController as! ConfirmViewController
-        println("show modal")
+
+        if segue.identifier == "submitOrder" {
+                    // submit order
+            println("submit order")
+        }
         
         // close both modals
-        //self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-
 
 }

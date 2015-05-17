@@ -503,11 +503,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="533" width="47" height="30"/>
+                                    <rect key="frame" x="171" y="541" width="47" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="submitBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="Veg-8e-yyY"/>
-                                    <segue destination="XSS-i6-YZW" kind="presentation" identifier="gotoConfirm" id="mEB-ta-sEb"/>
+                                    <segue destination="TWI-wj-QcV" kind="unwind" unwindAction="confirmOrder:" id="GCL-B1-tN0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -551,6 +550,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1x-xc-zps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TWI-wj-QcV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3117" y="267"/>
         </scene>
@@ -605,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hz-IH-bsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3880.5" y="261"/>
+            <point key="canvasLocation" x="2358" y="979"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">
