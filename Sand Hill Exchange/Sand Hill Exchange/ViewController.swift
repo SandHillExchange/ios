@@ -14,6 +14,7 @@ let MARKET_URL: String = BASE_URL + "/market/json"
 class ViewController: UIViewController {
 
     var companies = [Company]()
+    let pendingOperations = PendingOperations()
     var fetchDone = false
     
     @IBAction func marketBtn(sender: UIButton) {
@@ -24,17 +25,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        println("portfolio page")
         
         // download portfolio info while view is loading
         
         // download market data while view is loading
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
-            self.getMarketData()
-            dispatch_async(dispatch_get_main_queue()) {
-                return
-            }
-        }
+        getMarketData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,10 +46,45 @@ class ViewController: UIViewController {
         }
     }
     func getMarketData() {
-        let session = NSURLSession.sharedSession()
+        //let session = NSURLSession.sharedSession()
         let url = NSURL(string: MARKET_URL)!
         let request = NSURLRequest(URL: url)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {response,data,error in
+            if data != nil {
+                /* 5 - Success! Parse the data */
+                var parsingError: NSError? = nil
+                let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                
+                //println(parsedResult)
+                if let marketDictionary = parsedResult.valueForKey("data") as? NSArray {
+                    
+                    for m in marketDictionary {
+                        var c = Company()
+                        var logoUrl = NSURL(string:BASE_URL + "/gcs/")
+                        c.logoUrl = logoUrl
+                        c.key = m[1] as! String
+                        c.symbol = m[2] as! String
+                        c.name = m[3] as! String
+                        c.lastPrice = m[4] as! Float
+                        self.companies.append(c)
+                    }
+                    self.fetchDone = true
+                    
+                } else {
+                    println("Cant find key 'data' in \(parsedResult)")
+                }
+            }
+            
+            if error != nil {
+                let alert = UIAlertView(title:"Oops!",message:error.localizedDescription, delegate:nil, cancelButtonTitle:"OK")
+                alert.show()
+            }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+        
+        /*
         let task = session.dataTaskWithRequest(request) {data, response, downloadError in
             if let error = downloadError {
                 println("Could not complete the request \(error)")
@@ -67,7 +98,8 @@ class ViewController: UIViewController {
                     
                     for m in marketDictionary {
                         var c = Company()
-                        c.logoUrl = m[0] as! String
+                        var logoUrl = NSURL(string:BASE_URL + "/gcs/")
+                        c.logoUrl = logoUrl
                         c.key = m[1] as! String
                         c.symbol = m[2] as! String
                         c.name = m[3] as! String
@@ -84,7 +116,8 @@ class ViewController: UIViewController {
         
         /* 9 - Resume (execute) the task */
         task.resume()
-    }
+    */
+  }
 
 
 }

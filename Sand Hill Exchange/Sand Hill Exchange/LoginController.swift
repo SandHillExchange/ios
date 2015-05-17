@@ -50,7 +50,11 @@ class LoginController: UIViewController {
             // authenticate with stored login
             self.checkLogin(storedEmail! as! String, pw: storedPW!) { (succeeded: Bool, msg: String) -> () in
                 if(succeeded) {
-                    self.performSegueWithIdentifier("gotoDash", sender: self)
+                    println("logging in...")
+                    dispatch_async(dispatch_get_main_queue(),{
+                        self.performSegueWithIdentifier("gotoDash", sender: self)
+                    })
+
                 } else {
                     self.emailField.text = storedEmail as! String
                     NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasLoginKey")
@@ -102,6 +106,7 @@ class LoginController: UIViewController {
                         var userkey = parseJSON["userkey"] as? String
                         
                         if !self.hasLogin {
+                            println("saving pw for first time")
                             // save password if not done before
                             self.shxKeychainWrapper.mySetObject(pw, forKey:kSecValueData)
                             self.shxKeychainWrapper.writeToKeychain()

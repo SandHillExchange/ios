@@ -11,6 +11,7 @@ import UIKit
 class CompanyViewController: UIViewController {
 
     var company = Company()
+    //let pendingOperations = PendingOperations()
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -21,10 +22,7 @@ class CompanyViewController: UIViewController {
         println(company.name)
         nameLabel.text = company.name
         
-        let imgString = BASE_URL + "/gcs/" + company.logoUrl
-        let imgURL = NSURL(string: imgString)
-
-        let data = NSData(contentsOfURL: imgURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        let data = NSData(contentsOfURL: company.logoUrl!) //make sure your image in this url does exist, otherwise unwrap in a if let check
 
         logoImage.image = UIImage(data: data!)
 
