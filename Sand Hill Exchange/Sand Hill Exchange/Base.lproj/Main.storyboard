@@ -507,6 +507,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="submitBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="Veg-8e-yyY"/>
+                                    <segue destination="XSS-i6-YZW" kind="presentation" identifier="gotoConfirm" id="mEB-ta-sEb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -562,6 +563,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QdK-bb-EIw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LgH-a2-V1j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray, confirmed." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-rT-mxJ">
@@ -603,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hz-IH-bsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769.5" y="267"/>
+            <point key="canvasLocation" x="3880.5" y="261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vui-vz-7DC">

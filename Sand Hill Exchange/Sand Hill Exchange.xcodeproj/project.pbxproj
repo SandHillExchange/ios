@@ -95,21 +95,21 @@
 		3AA29EC01AE4498700A906D8 /* Sand Hill Exchange */ = {
 			isa = PBXGroup;
 			children = (
-				3AA29EF41AE4903500A906D8 /* MarketViewController.swift */,
 				3AA29EE61AE44C8100A906D8 /* Images.xcassets */,
 				3AA29EC31AE4498700A906D8 /* AppDelegate.swift */,
 				3AA29EC81AE4498700A906D8 /* ViewController.swift */,
 				3AA29ECA1AE4498700A906D8 /* Main.storyboard */,
 				3A0CBA041AEAE519008A2C03 /* LoginController.swift */,
+				3AA29EF41AE4903500A906D8 /* MarketViewController.swift */,
+				3AA29EF81AE4B10C00A906D8 /* CompanyViewController.swift */,
 				3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */,
 				3AD0CD581AF6BCC9000C9A35 /* KeychainWrapper.h */,
 				3AD0CD591AF6BCC9000C9A35 /* KeychainWrapper.m */,
-				3AA29EF81AE4B10C00A906D8 /* CompanyViewController.swift */,
-				3AA29EEA1AE461FA00A906D8 /* CompanyModel.swift */,
-				3A0CBA021AE984A3008A2C03 /* OrderModel.swift */,
 				3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */,
 				3AA29EC11AE4498700A906D8 /* Supporting Files */,
 				3AA29EF61AE4A27000A906D8 /* MarketCell.swift */,
+				3AA29EEA1AE461FA00A906D8 /* CompanyModel.swift */,
+				3A0CBA021AE984A3008A2C03 /* OrderModel.swift */,
 				3AD0CD571AF6BCC8000C9A35 /* Sand Hill Exchange-Bridging-Header.h */,
 			);
 			path = "Sand Hill Exchange";
