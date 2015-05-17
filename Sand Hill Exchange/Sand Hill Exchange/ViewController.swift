@@ -10,12 +10,15 @@ import UIKit
 
 let BASE_URL: String = "https://www.b00st.vc"
 let MARKET_URL: String = BASE_URL + "/market/json"
+let PORTFOLIO_URL: String = BASE_URL + "/portfolio/json"
 
 class ViewController: UIViewController {
 
     var companies = [Company]()
-    let pendingOperations = PendingOperations()
+    var holdings = [Company]()
     var fetchDone = false
+    
+    @IBOutlet weak var liquidLabel: UILabel!
     
     @IBAction func marketBtn(sender: UIButton) {
         if fetchDone {
@@ -25,9 +28,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("portfolio page")
+        
+        // start out with previously-stored portfolio
+        let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")
         
         // download portfolio info while view is loading
+        getPortfolio()
         
         // download market data while view is loading
         getMarketData()
@@ -45,6 +51,49 @@ class ViewController: UIViewController {
             marketVC.companies = data
         }
     }
+    
+    func getPortfolio() {
+        let url = NSURL(string: PORTFOLIO_URL)!
+        let request = NSURLRequest(URL: url)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {response,data,error in
+            if data != nil {
+                /* 5 - Success! Parse the data */
+                var parsingError: NSError? = nil
+                let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                
+                if let liquidVal = parsedResult.valueForKey("liquid_val") as? String {
+                    self.liquidLabel.text = liquidVal
+                    if let portfolioDict = parsedResult.valueForKey("portfolio") as? NSArray {
+                        
+                        for p in portfolioDict {
+                            var c = Company()
+                            var logoUrl = NSURL(string:BASE_URL + (p["logo"] as! String))
+                            c.logoUrl = logoUrl
+                            c.symbol = p["symbol"] as! String
+                            c.qty = p["qty"] as! Int
+                            c.avgPrice = (p["avg_price"] as! NSString).floatValue
+                            c.quote = Quote(lastPrice: (p["last_price"] as! NSString).floatValue, dayChange: (p["day_change"] as! NSString).floatValue, volume: 0)
+                            self.holdings.append(c)
+                        }
+                    }
+                    
+                } else {
+                    println("Cant find key 'data' in \(parsedResult)")
+                }
+            }
+            
+            if error != nil {
+                let alert = UIAlertView(title:"Oops!",message:error.localizedDescription, delegate:nil, cancelButtonTitle:"OK")
+                alert.show()
+            }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    
+    
     func getMarketData() {
         //let session = NSURLSession.sharedSession()
         let url = NSURL(string: MARKET_URL)!
@@ -62,12 +111,12 @@ class ViewController: UIViewController {
                     
                     for m in marketDictionary {
                         var c = Company()
-                        var logoUrl = NSURL(string:BASE_URL + "/gcs/")
+                        var logoUrl = NSURL(string:BASE_URL + "/gcs/" + (m[0] as! String))
                         c.logoUrl = logoUrl
                         c.key = m[1] as! String
                         c.symbol = m[2] as! String
                         c.name = m[3] as! String
-                        c.lastPrice = m[4] as! Float
+                        c.quote = Quote(lastPrice: m[4] as! Float, dayChange: m[6] as! Float, volume: m[7] as! Int)
                         self.companies.append(c)
                     }
                     self.fetchDone = true

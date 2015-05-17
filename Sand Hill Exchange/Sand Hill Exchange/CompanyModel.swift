@@ -18,9 +18,12 @@ class Company: NSObject{
     var name: String!
     var key: String!
     var symbol: String!
-    var lastPrice: Float!
+    var quote: Quote!
     var image = UIImage(named: "Placeholder")
     var state = CompanyState.New
+    // properties for PortfolioEquity
+    var qty: Int!
+    var avgPrice: Float!
     
     //companies.query(["completed": false], error: nil)
     
@@ -34,6 +37,12 @@ class Company: NSObject{
     */
     }
     
+}
+
+struct Quote {
+    var lastPrice: Float!
+    var dayChange: Float!
+    var volume: Int!
 }
 
 
