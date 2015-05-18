@@ -35,10 +35,20 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")
+
         portfolioView.dataSource = self
         portfolioView.delegate = self
         portfolioView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+        if(storedPortfolio != nil) {
+        if let liquidVal = storedPortfolio!.valueForKey("liquid_val") as? String {
+            self.liquidLabel.text = liquidVal
+            
+            if let portfolioDict = storedPortfolio!.valueForKey("portfolio") as? NSArray {
+                self.holdings = self.createCompanies(portfolioDict)
+                self.portfolioView.reloadData()
+            }
+        }
+        }
         
         // download portfolio info while view is loading
         getPortfolio()
@@ -92,23 +102,17 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
                 /* 5 - Success! Parse the data */
                 var parsingError: NSError? = nil
                 let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
-                
+
                 if let liquidVal = parsedResult.valueForKey("liquid_val") as? String {
                     self.liquidLabel.text = liquidVal
+
                     if let portfolioDict = parsedResult.valueForKey("portfolio") as? NSArray {
                         
-                        for p in portfolioDict {
-                            var c = Company()
-                            var logoUrl = NSURL(string:BASE_URL + (p["logo"] as! String))
-                            c.logoUrl = logoUrl
-                            c.symbol = p["symbol"] as! String
-                            c.qty = p["qty"] as! Int
-                            c.avgPrice = (p["avg_price"] as! NSString).floatValue
-                            c.quote = Quote(lastPrice: (p["last_price"] as! NSString).floatValue, dayChange: (p["day_change"] as! NSString).floatValue, volume: 0)
-                            self.holdings.append(c)
-                        }
+                        self.holdings = self.createCompanies(portfolioDict)
                         self.portfolioView.reloadData()
                     }
+                    // store for next time
+                    NSUserDefaults.standardUserDefaults().setValue(parsedResult, forKey: "portfolio")
                     
                 } else {
                     println("Cant find key 'data' in \(parsedResult)")
@@ -123,7 +127,21 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    
+    func createCompanies(portfolioDict: NSArray) -> [Company] {
+        var cos = [Company]()
+        
+        for p in portfolioDict {
+            var c = Company()
+            var logoUrl = NSURL(string:BASE_URL + (p["logo"] as! String))
+            c.logoUrl = logoUrl
+            c.symbol = p["symbol"] as! String
+            c.qty = p["qty"] as! Int
+            c.avgPrice = (p["avg_price"] as! NSString).floatValue
+            c.quote = Quote(lastPrice: (p["last_price"] as! NSString).floatValue, dayChange: (p["day_change"] as! NSString).floatValue, volume: 0)
+            cos.append(c)
+        }
+        return cos
+    }
     
     func getMarketData() {
         //let session = NSURLSession.sharedSession()

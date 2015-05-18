@@ -48,6 +48,9 @@ struct Quote {
     var volume: Int!
 }
 
+/* I changed my mind about dling images
+   but just in case: http://www.raywenderlich.com/76341/use-nsoperation-nsoperationqueue-swift
+*/
 
 class PendingOperations {
     lazy var downloadsInProgress = [NSIndexPath:NSOperation]()
