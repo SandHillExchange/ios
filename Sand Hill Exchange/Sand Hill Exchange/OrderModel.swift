@@ -13,4 +13,5 @@ class Order: NSObject{
     var symbol: String!
     var price: Float!
     var qty: Int!
+    var bidAsk: Bool!   // true = BUY, false = SELL
 }

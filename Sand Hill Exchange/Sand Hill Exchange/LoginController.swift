@@ -37,6 +37,12 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailField.attributedPlaceholder = NSAttributedString(string:"placeholder text",
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        pwField.attributedPlaceholder = NSAttributedString(string:"placeholder text",
+            attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        self.navigationController!.navigationBar.hidden = true
+        
         // check for stored login
         hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
         // set the username field to what is saved in NSUserDefaults

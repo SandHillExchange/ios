@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sand Hill Exchange/PortfolioViewController.swift"
-            timestampString = "453605417.516841"
+            timestampString = "453619864.626061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "cellAtIndexPath(_:)"
             landmarkType = "5">
          </BreakpointContent>

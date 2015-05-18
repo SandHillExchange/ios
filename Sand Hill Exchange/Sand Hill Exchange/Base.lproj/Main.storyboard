@@ -18,29 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Sand Hill Exchange" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-On-1dO">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="100" y="45" width="217" height="21"/>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGH-0m-sbc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-aM-kh4">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="111" width="97" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-aM-kh4">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="168" width="97" height="30"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="87" y="224" width="200" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="pwField:" destination="ua2-Yg-dtu" eventType="editingDidEnd" id="Dof-FB-UZz"/>
@@ -51,86 +35,70 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVQ-fE-505">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Create an account">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="270" width="126" height="30"/>
-                                </variation>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ra-Pz-BRF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ra-Pz-BRF">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="111" width="97" height="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="80" y="169" width="200" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="emailField:" destination="ua2-Yg-dtu" eventType="editingDidEnd" id="mzt-RN-NAh"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGk-lb-6FK">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="100" y="115" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TG-DF-r8a">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="66" y="172" width="76" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gA-Ct-lQH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log in ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="226" width="47" height="30"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="87" y="314" width="200" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="loginBtn:" destination="ua2-Yg-dtu" eventType="touchUpInside" id="zd2-1O-cki"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.13340357730263158" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Wvf-aM-kh4" secondAttribute="centerX" constant="-13" id="0Ci-zo-GKH"/>
+                            <constraint firstAttribute="centerX" secondItem="9gA-Ct-lQH" secondAttribute="centerX" constant="-3" id="HkJ-zr-MyY"/>
+                            <constraint firstItem="9gA-Ct-lQH" firstAttribute="top" secondItem="Wvf-aM-kh4" secondAttribute="bottom" constant="60" id="LTQ-bD-CXc"/>
+                            <constraint firstAttribute="centerX" secondItem="4ra-Pz-BRF" secondAttribute="centerX" constant="-3" id="vKh-LV-iTL"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="gea-On-1dO"/>
-                                <exclude reference="zGH-0m-sbc"/>
                                 <exclude reference="Wvf-aM-kh4"/>
                                 <exclude reference="nCF-Ma-a6J"/>
-                                <exclude reference="xVQ-fE-505"/>
                                 <exclude reference="4ra-Pz-BRF"/>
-                                <exclude reference="kGk-lb-6FK"/>
-                                <exclude reference="3TG-DF-r8a"/>
                                 <exclude reference="9gA-Ct-lQH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="vKh-LV-iTL"/>
+                                <exclude reference="0Ci-zo-GKH"/>
+                                <exclude reference="HkJ-zr-MyY"/>
+                                <exclude reference="LTQ-bD-CXc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="gea-On-1dO"/>
-                                <include reference="zGH-0m-sbc"/>
                                 <include reference="Wvf-aM-kh4"/>
                                 <exclude reference="nCF-Ma-a6J"/>
-                                <include reference="xVQ-fE-505"/>
                                 <include reference="4ra-Pz-BRF"/>
-                                <include reference="kGk-lb-6FK"/>
-                                <include reference="3TG-DF-r8a"/>
                                 <include reference="9gA-Ct-lQH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="vKh-LV-iTL"/>
+                                <include reference="0Ci-zo-GKH"/>
+                                <include reference="HkJ-zr-MyY"/>
+                                <include reference="LTQ-bD-CXc"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bFh-6o-wMC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emailField" destination="4ra-Pz-BRF" id="87o-5P-LHM"/>
                         <outlet property="pwField" destination="Wvf-aM-kh4" id="xby-wG-W6Q"/>
@@ -139,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9z-4U-2nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="-399"/>
+            <point key="canvasLocation" x="770.25" y="-399.5"/>
         </scene>
         <!--Sand Hill Exchange-->
         <scene sceneID="tne-QT-ifu">
@@ -736,4 +704,5 @@
         <segue reference="rZi-qx-p85"/>
         <segue reference="iQQ-cV-el9"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.53666853584756369" green="0.60000002384185791" blue="0.57686300952545577" alpha="1" colorSpace="calibratedRGB"/>
 </document>
