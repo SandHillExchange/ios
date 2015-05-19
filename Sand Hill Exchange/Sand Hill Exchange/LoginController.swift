@@ -20,8 +20,10 @@ class LoginController: UIViewController {
     
     let shxKeychainWrapper = KeychainWrapper()
     
+
     @IBOutlet weak var loginButton: UIButton!
-        
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     
     @IBAction func emailField(sender: UITextField) {
         // disable login button until this has stuff
@@ -37,11 +39,16 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailField.attributedPlaceholder = NSAttributedString(string:"placeholder text",
+        emailField.attributedPlaceholder = NSAttributedString(string:"email",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
-        pwField.attributedPlaceholder = NSAttributedString(string:"placeholder text",
+        pwField.attributedPlaceholder = NSAttributedString(string:"password",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
+        loginButton.layer.cornerRadius = 3.0;
         self.navigationController!.navigationBar.hidden = true
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+
         
         // check for stored login
         hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
@@ -72,6 +79,16 @@ class LoginController: UIViewController {
         
     }
     
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(1.0, delay: 1.0, options: .CurveEaseOut, animations: { () -> Void in
+            if let temp = self.bottomConstraint {
+                temp.constant = keyboardFrame.size.height + 20
+            }
+        }, completion: nil)
+    }
     
     func checkLogin(email: String, pw: String, postCompleted : (succeeded: Bool, msg: String) -> () ) {
         
