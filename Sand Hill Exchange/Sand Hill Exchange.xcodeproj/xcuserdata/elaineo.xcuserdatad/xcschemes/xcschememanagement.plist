@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SHXView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sand Hill Exchange.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3A01C5D21B0D46D400C4D84A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A01C5DC1B0D46D500C4D84A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3AA29EBD1AE4498700A906D8</key>
 		<dict>
 			<key>primary</key>

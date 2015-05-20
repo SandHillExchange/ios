@@ -221,7 +221,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="MarketCell" id="Tjy-85-b9d" customClass="MarketCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="MarketCell" id="Tjy-85-b9d" customClass="MarketCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tjy-85-b9d" id="mtn-1d-rwd">
@@ -244,9 +244,6 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX1-Jt-EVw">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="6zZ-xK-dQN"/>
-                                                    </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Price">
                                                             <attributes>
@@ -257,16 +254,8 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="6zZ-xK-dQN"/>
-                                                        </mask>
-                                                    </variation>
                                                     <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="312" y="11" width="40" height="21"/>
-                                                        <mask key="constraints">
-                                                            <include reference="6zZ-xK-dQN"/>
-                                                        </mask>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -274,8 +263,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="bWi-Xd-hje" secondAttribute="centerY" constant="-1" id="9bM-PH-UKI"/>
                                                 <constraint firstAttribute="centerY" secondItem="yX1-Jt-EVw" secondAttribute="centerY" id="9uN-R7-3aL"/>
-                                                <constraint firstItem="yX1-Jt-EVw" firstAttribute="trailing" secondItem="mtn-1d-rwd" secondAttribute="trailingMargin" id="CeT-B3-lhr"/>
-                                                <constraint firstItem="bWi-Xd-hje" firstAttribute="leading" secondItem="mtn-1d-rwd" secondAttribute="leadingMargin" id="SHr-xR-2Z8"/>
+                                                <constraint firstItem="bWi-Xd-hje" firstAttribute="leading" secondItem="mtn-1d-rwd" secondAttribute="leadingMargin" constant="-12" id="SHr-xR-2Z8"/>
+                                                <constraint firstItem="yX1-Jt-EVw" firstAttribute="trailing" secondItem="mtn-1d-rwd" secondAttribute="trailingMargin" constant="-13" id="Ztf-Nm-Jh1"/>
                                                 <constraint firstAttribute="centerY" secondItem="gtV-xr-jG4" secondAttribute="centerY" id="inD-6p-RD4"/>
                                                 <constraint firstAttribute="centerX" secondItem="gtV-xr-jG4" secondAttribute="centerX" constant="17.5" id="nye-aT-yhc"/>
                                             </constraints>
@@ -291,7 +280,7 @@
                                                     <exclude reference="inD-6p-RD4"/>
                                                     <exclude reference="nye-aT-yhc"/>
                                                     <exclude reference="9uN-R7-3aL"/>
-                                                    <exclude reference="CeT-B3-lhr"/>
+                                                    <exclude reference="Ztf-Nm-Jh1"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -306,7 +295,7 @@
                                                     <include reference="inD-6p-RD4"/>
                                                     <include reference="nye-aT-yhc"/>
                                                     <include reference="9uN-R7-3aL"/>
-                                                    <include reference="CeT-B3-lhr"/>
+                                                    <include reference="Ztf-Nm-Jh1"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -508,7 +497,7 @@
                         <viewControllerLayoutGuide type="top" id="XD8-1L-mbI"/>
                         <viewControllerLayoutGuide type="bottom" id="caL-Qd-AOL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vuP-cM-iII">
+                    <view key="view" contentMode="scaleToFill" id="vuP-cM-iII" customClass="SHXView" customModule="SHXView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

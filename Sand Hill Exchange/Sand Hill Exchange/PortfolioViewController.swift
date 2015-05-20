@@ -34,6 +34,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         self.navigationController!.navigationBar.hidden = true
+        portfolioView.tableFooterView = UIView(frame:CGRectZero)
         
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")

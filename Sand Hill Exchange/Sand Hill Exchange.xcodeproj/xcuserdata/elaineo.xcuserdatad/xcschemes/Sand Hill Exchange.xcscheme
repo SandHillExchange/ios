@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Sand Hill Exchange.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A01C5DC1B0D46D500C4D84A"
+               BuildableName = "SHXViewTests.xctest"
+               BlueprintName = "SHXViewTests"
+               ReferencedContainer = "container:Sand Hill Exchange.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "3AA29ED51AE4498700A906D8"
                BuildableName = "Sand Hill ExchangeTests.xctest"
                BlueprintName = "Sand Hill ExchangeTests"
+               ReferencedContainer = "container:Sand Hill Exchange.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A01C5DC1B0D46D500C4D84A"
+               BuildableName = "SHXViewTests.xctest"
+               BlueprintName = "SHXViewTests"
                ReferencedContainer = "container:Sand Hill Exchange.xcodeproj">
             </BuildableReference>
          </TestableReference>
