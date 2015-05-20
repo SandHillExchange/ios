@@ -16,6 +16,8 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
     let marketCellIdentifier = "MarketCell"
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
   
         tableView.dataSource = self

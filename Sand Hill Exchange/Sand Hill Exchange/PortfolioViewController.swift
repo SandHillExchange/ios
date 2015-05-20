@@ -33,7 +33,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // self.navigationController!.navigationBar.hidden = true
+        self.navigationController!.navigationBar.hidden = true
         
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")

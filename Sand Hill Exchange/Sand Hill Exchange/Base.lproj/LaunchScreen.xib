@@ -21,7 +21,7 @@
             <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="N2o-Jy-P3Y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="Mhw-XH-tR4"/>
-                <constraint firstAttribute="centerX" secondItem="N2o-Jy-P3Y" secondAttribute="centerX" constant="14.5" id="UFP-EK-gxh"/>
+                <constraint firstAttribute="centerX" secondItem="N2o-Jy-P3Y" secondAttribute="centerX" id="UFP-EK-gxh"/>
                 <constraint firstItem="N2o-Jy-P3Y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="pXm-M1-SgO"/>
                 <constraint firstAttribute="trailing" secondItem="N2o-Jy-P3Y" secondAttribute="trailing" constant="120" id="utb-Ug-S8q"/>
             </constraints>
