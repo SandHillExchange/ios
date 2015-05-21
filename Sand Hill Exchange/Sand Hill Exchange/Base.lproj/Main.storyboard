@@ -189,7 +189,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-J8-N21">
@@ -204,8 +204,9 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="140" y="50" width="96" height="27"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-Gx-ike">
@@ -213,6 +214,9 @@
                                 <state key="normal" title="Market">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="313" y="22" width="48" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="marketBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awg-Q3-gVb"/>
                                 </connections>
@@ -233,6 +237,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="153" y="11" width="27" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWi-Xd-hje">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -253,7 +260,8 @@
                                                             <exclude reference="sLu-Mo-ocW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="308" y="8" width="60" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="sLu-Mo-ocW"/>
                                                         </mask>
@@ -310,7 +318,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="18" y="249" width="343" height="418"/>
+                                    <rect key="frame" x="20" y="205" width="343" height="395"/>
                                 </variation>
                             </tableView>
                         </subviews>
@@ -380,11 +388,19 @@
                         <viewControllerLayoutGuide type="bottom" id="q7n-kk-F4l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4YD-VR-Sid">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The market is open" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-Lk-wMt">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.53666853579999996" green="0.60000002379999995" blue="0.57686300950000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="72" width="148" height="21"/>
+                                </variation>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="bottom" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-eq-iog">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="kDh-Ef-sA7"/>
@@ -485,7 +501,7 @@
                                             <outlet property="nameLabel" destination="O35-kP-sAt" id="VdE-7Q-GEq"/>
                                             <outlet property="priceLabel" destination="2Ke-Xe-gc1" id="rR9-pK-8ZX"/>
                                             <outlet property="symbolLabel" destination="TKd-4C-g51" id="W8s-yn-LQP"/>
-                                            <segue destination="GSQ-5C-jmU" kind="show" id="arv-ls-6BK"/>
+                                            <segue destination="GSQ-5C-jmU" kind="show" identifier="goToCompany" id="arv-ls-6BK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -501,15 +517,18 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The market is open" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-Lk-wMt">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.53666853579999996" green="0.60000002379999995" blue="0.57686300950000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-Di-Jf9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back to portfolio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="72" width="148" height="21"/>
+                                    <rect key="frame" x="16" y="51" width="114" height="30"/>
                                 </variation>
-                            </label>
+                                <connections>
+                                    <action selector="backButton:" destination="Pev-64-hl3" eventType="touchUpInside" id="OyO-Qh-390"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -518,10 +537,12 @@
                             <constraint firstItem="2u4-eq-iog" firstAttribute="leading" secondItem="4YD-VR-Sid" secondAttribute="leadingMargin" constant="-16" id="Oye-4k-UmR"/>
                             <constraint firstItem="8Bj-Lk-wMt" firstAttribute="top" secondItem="Dis-YA-SuB" secondAttribute="bottom" constant="20" id="YCl-02-hL2"/>
                             <constraint firstItem="q7n-kk-F4l" firstAttribute="bottom" secondItem="2u4-eq-iog" secondAttribute="bottom" id="Ycb-BI-Ssl"/>
+                            <constraint firstItem="bKn-Di-Jf9" firstAttribute="top" secondItem="Dis-YA-SuB" secondAttribute="bottom" constant="2" id="uUB-az-9NC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="8Bj-Lk-wMt"/>
+                                <exclude reference="bKn-Di-Jf9"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="YCl-02-hL2"/>
@@ -529,11 +550,13 @@
                                 <exclude reference="MKd-tu-t8P"/>
                                 <exclude reference="Oye-4k-UmR"/>
                                 <exclude reference="Ycb-BI-Ssl"/>
+                                <exclude reference="uUB-az-9NC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="8Bj-Lk-wMt"/>
+                                <include reference="bKn-Di-Jf9"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="YCl-02-hL2"/>
@@ -541,6 +564,7 @@
                                 <include reference="MKd-tu-t8P"/>
                                 <include reference="Oye-4k-UmR"/>
                                 <include reference="Ycb-BI-Ssl"/>
+                                <include reference="uUB-az-9NC"/>
                             </mask>
                         </variation>
                     </view>
@@ -561,7 +585,7 @@
                         <viewControllerLayoutGuide type="bottom" id="caL-Qd-AOL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vuP-cM-iII" customClass="SHXView" customModule="SHXView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu3-94-kTs">
@@ -640,7 +664,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YZc-O1-jGX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4lM-2D-JgU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-Im-E7Y">

@@ -57,7 +57,9 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         getPortfolio()
         
         // download market data while view is loading
-        getMarketData()
+        if !fetchDone {
+            getMarketData()
+        }
     }
     
     // MARK: - Table view data source

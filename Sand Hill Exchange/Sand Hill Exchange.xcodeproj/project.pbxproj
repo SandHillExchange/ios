@@ -15,12 +15,12 @@
 		3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F31B0D471C00C4D84A /* SHXView.swift */; };
 		3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
 		3A01C5FA1B0D723500C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
+		3A01C5FD1B0E9CA600C4D84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A01C5FB1B0E9CA600C4D84A /* Main.storyboard */; };
 		3A0CBA011AE983D7008A2C03 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */; };
 		3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA021AE984A3008A2C03 /* OrderModel.swift */; };
 		3A0CBA051AEAE519008A2C03 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA041AEAE519008A2C03 /* LoginController.swift */; };
 		3A3A0B501B08163A00CE92A4 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */; };
 		3A3A0B521B08169000CE92A4 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B511B08169000CE92A4 /* MarketViewController.swift */; };
-		3A3A0B571B081AE400CE92A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3A0B551B081AE400CE92A4 /* Main.storyboard */; };
 		3AA29EC41AE4498700A906D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC31AE4498700A906D8 /* AppDelegate.swift */; };
 		3AA29EC91AE4498700A906D8 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC81AE4498700A906D8 /* PortfolioViewController.swift */; };
 		3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */; };
@@ -86,12 +86,12 @@
 		3A01C5E61B0D46D500C4D84A /* SHXViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHXViewTests.swift; sourceTree = "<group>"; };
 		3A01C5F31B0D471C00C4D84A /* SHXView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHXView.swift; sourceTree = "<group>"; };
 		3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
+		3A01C5FC1B0E9CA600C4D84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		3A0CBA021AE984A3008A2C03 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A0CBA041AEAE519008A2C03 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3A3A0B511B08169000CE92A4 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
-		3A3A0B561B081AE400CE92A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AA29EBE1AE4498700A906D8 /* Sand Hill Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sand Hill Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA29EC21AE4498700A906D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA29EC31AE4498700A906D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				3AA29EE61AE44C8100A906D8 /* Images.xcassets */,
 				3AA29EC31AE4498700A906D8 /* AppDelegate.swift */,
 				3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */,
-				3A3A0B551B081AE400CE92A4 /* Main.storyboard */,
+				3A01C5FB1B0E9CA600C4D84A /* Main.storyboard */,
 				3A0CBA041AEAE519008A2C03 /* LoginController.swift */,
 				3AA29EC81AE4498700A906D8 /* PortfolioViewController.swift */,
 				3A3A0B511B08169000CE92A4 /* MarketViewController.swift */,
@@ -419,7 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3A0B571B081AE400CE92A4 /* Main.storyboard in Resources */,
+				3A01C5FD1B0E9CA600C4D84A /* Main.storyboard in Resources */,
 				3AA29EE71AE44C8100A906D8 /* Images.xcassets in Resources */,
 				3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */,
 			);
@@ -505,10 +505,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A3A0B551B081AE400CE92A4 /* Main.storyboard */ = {
+		3A01C5FB1B0E9CA600C4D84A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A3A0B561B081AE400CE92A4 /* Base */,
+				3A01C5FC1B0E9CA600C4D84A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

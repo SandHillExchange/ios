@@ -25,6 +25,9 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    @IBAction func backButton(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
 
     // MARK: - Table view data source
     
@@ -57,19 +60,19 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        // sender is the tapped `UITableViewCell`
-        let cell = sender as! MarketCell
-        let indexPath = self.tableView.indexPathForCell(cell)
-        
-        // load the selected model
-        let item = self.companies[indexPath!.row]
-        
-        println(indexPath!.row)
-        if let destination:CompanyViewController = segue.destinationViewController as? CompanyViewController {
-           destination.company = item
+        if (segue.identifier == "goToCompany") {
+            
+            // sender is the tapped `UITableViewCell`
+            let cell = sender as! MarketCell
+            let indexPath = self.tableView.indexPathForCell(cell)
+            
+            // load the selected model
+            let item = self.companies[indexPath!.row]
+            
+            println(indexPath!.row)
+            if let destination:CompanyViewController = segue.destinationViewController as? CompanyViewController {
+                destination.company = item
+            }
         }
     }
 
