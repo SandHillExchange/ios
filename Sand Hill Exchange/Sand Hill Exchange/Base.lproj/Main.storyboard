@@ -266,7 +266,7 @@
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="bWi-Xd-hje" secondAttribute="centerY" constant="-1" id="9bM-PH-UKI"/>
-                                                <constraint firstItem="xkG-FS-ixm" firstAttribute="trailing" secondItem="mtn-1d-rwd" secondAttribute="trailingMargin" constant="-26" id="Q3I-pe-Ivv"/>
+                                                <constraint firstItem="xkG-FS-ixm" firstAttribute="trailingMargin" secondItem="mtn-1d-rwd" secondAttribute="trailingMargin" id="Q3I-pe-Ivv"/>
                                                 <constraint firstItem="bWi-Xd-hje" firstAttribute="leading" secondItem="mtn-1d-rwd" secondAttribute="leadingMargin" constant="-12" id="SHr-xR-2Z8"/>
                                                 <constraint firstAttribute="centerY" secondItem="gtV-xr-jG4" secondAttribute="centerY" id="inD-6p-RD4"/>
                                                 <constraint firstAttribute="centerX" secondItem="gtV-xr-jG4" secondAttribute="centerX" constant="17.5" id="nye-aT-yhc"/>
