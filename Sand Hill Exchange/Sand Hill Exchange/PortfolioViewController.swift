@@ -8,7 +8,7 @@
 
 import UIKit
 
-let BASE_URL: String = "https://www.b00st.vc"
+let BASE_URL: String = "https://www.sandhill.exchange"
 let MARKET_URL: String = BASE_URL + "/market/json"
 let PORTFOLIO_URL: String = BASE_URL + "/portfolio/json"
 
