@@ -16,6 +16,7 @@ class MarketCell: UITableViewCell {
     @IBOutlet var ppriceLabel: PriceButton!
 
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var symbolLabel: UILabel!
     @IBOutlet weak var priceLabel: PriceButton!
 

@@ -44,7 +44,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         portfolioView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         if(storedPortfolio != nil) {
         if let liquidVal = storedPortfolio!.valueForKey("liquid_val") as? String {
-            self.liquidLabel.text = liquidVal
+            self.liquidLabel.text = "$" + liquidVal
             
             if let portfolioDict = storedPortfolio!.valueForKey("portfolio") as? NSArray {
                 self.holdings = self.createCompanies(portfolioDict)
