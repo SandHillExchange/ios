@@ -82,9 +82,8 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
 
         cell.psymbolLabel.text = holdings[row].symbol
         cell.pqtyLabel.text = String(holdings[row].qty)
-        if let var label = holdings[row].quote.lastPrice{
-            cell.ppriceLabel.price = NSString(format: "$%.2f", holdings[row].quote.lastPrice) as String
-        } else { cell.ppriceLabel.price = "$0.00" }
+        cell.ppriceLabel.updateChange(holdings[row].quote.dayChange)
+        cell.ppriceLabel.updatePrice( holdings[row].quote.lastPrice)
         
         return cell
     }

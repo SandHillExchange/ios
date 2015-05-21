@@ -12,7 +12,7 @@ import SHXView
 
 class PriceButton: UIButton {
 
-    var price :String = "$1.00"
+    var price :String = "$0.00"
     var change : String = "0.00%"
     var isChange : Bool = false
     
@@ -42,6 +42,16 @@ class PriceButton: UIButton {
         } else {
            self.setTitle(price, forState: UIControlState.Normal)
         }
+    }
+    func updatePrice(newPrice: Float) {
+        self.price = NSString(format: "$%.2f", newPrice) as String
+        self.setTitle(price, forState: UIControlState.Normal)
+    }
+    func updateChange(newChange: Float) {
+        var formatter = NSNumberFormatter()
+        formatter.numberStyle = .PercentStyle
+        self.change = formatter.stringFromNumber(newChange)!
+        self.setTitle(change, forState: UIControlState.Normal)
     }
     
 }
