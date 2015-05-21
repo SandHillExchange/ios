@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import SHXView
 
 class MarketCell: UITableViewCell {
 
     @IBOutlet weak var psymbolLabel: UILabel!
     @IBOutlet weak var pqtyLabel: UILabel!
-    @IBOutlet weak var ppriceLabel: UILabel!
+    @IBOutlet var ppriceLabel: PriceButton!
+
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var symbolLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
-    
-    
+    @IBOutlet weak var priceLabel: PriceButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

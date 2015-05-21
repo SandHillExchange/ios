@@ -13,6 +13,8 @@
 		3A01C5EA1B0D46D500C4D84A /* SHXView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A01C5D31B0D46D400C4D84A /* SHXView.framework */; };
 		3A01C5EB1B0D46D500C4D84A /* SHXView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A01C5D31B0D46D400C4D84A /* SHXView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F31B0D471C00C4D84A /* SHXView.swift */; };
+		3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
+		3A01C5FA1B0D723500C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
 		3A0CBA011AE983D7008A2C03 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */; };
 		3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA021AE984A3008A2C03 /* OrderModel.swift */; };
 		3A0CBA051AEAE519008A2C03 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA041AEAE519008A2C03 /* LoginController.swift */; };
@@ -83,6 +85,7 @@
 		3A01C5E51B0D46D500C4D84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A01C5E61B0D46D500C4D84A /* SHXViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHXViewTests.swift; sourceTree = "<group>"; };
 		3A01C5F31B0D471C00C4D84A /* SHXView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHXView.swift; sourceTree = "<group>"; };
+		3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		3A0CBA021AE984A3008A2C03 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A0CBA041AEAE519008A2C03 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 				3A01C5D71B0D46D500C4D84A /* SHXView.h */,
 				3A01C5D51B0D46D500C4D84A /* Supporting Files */,
 				3A01C5F31B0D471C00C4D84A /* SHXView.swift */,
+				3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */,
 			);
 			path = SHXView;
 			sourceTree = "<group>";
@@ -436,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */,
+				3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +459,7 @@
 				3A3A0B501B08163A00CE92A4 /* ConfirmViewController.swift in Sources */,
 				3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */,
 				3AA29EF71AE4A27000A906D8 /* MarketCell.swift in Sources */,
+				3A01C5FA1B0D723500C4D84A /* PriceButton.swift in Sources */,
 				3A3A0B521B08169000CE92A4 /* MarketViewController.swift in Sources */,
 				3AA29EF91AE4B10C00A906D8 /* CompanyViewController.swift in Sources */,
 				3A0CBA011AE983D7008A2C03 /* OrderViewController.swift in Sources */,
@@ -533,7 +539,7 @@
 				);
 				INFOPLIST_FILE = SHXView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -554,7 +560,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SHXView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
