@@ -192,20 +192,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-J8-N21">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-J8-N21">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="LiquidVal">
+                                    <fragment content="$1000.00">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="23" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="141" y="94" width="130" height="27"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-Gx-ike">
@@ -397,81 +398,110 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLl-Zk-hi8" id="oV1-7B-lIb">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgt-le-DIj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-4C-g51">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="HUy-0g-T8b"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Y7i-gH-jLq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="HUy-0g-T8b"/>
+                                                            <exclude reference="Y7i-gH-jLq"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="172" y="14" width="46" height="21"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="HUy-0g-T8b"/>
+                                                            <include reference="Y7i-gH-jLq"/>
                                                         </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-4C-g51">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="14" width="59" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ke-Xe-gc1" customClass="PriceButton" customModule="SHXView">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="tIC-Ym-qFM"/>
+                                                    </constraints>
                                                     <state key="normal" title="Price">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="tIC-Ym-qFM"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="314" y="10" width="46" height="30"/>
+                                                        <mask key="constraints">
+                                                            <include reference="tIC-Ym-qFM"/>
+                                                        </mask>
                                                     </variation>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hgt-le-DIj" firstAttribute="leading" secondItem="oV1-7B-lIb" secondAttribute="leading" constant="172" id="9kt-Fj-xmG"/>
+                                                <constraint firstAttribute="centerY" secondItem="2Ke-Xe-gc1" secondAttribute="centerY" constant="-3.5" id="6eP-Lt-FCQ"/>
+                                                <constraint firstAttribute="centerY" secondItem="TKd-4C-g51" secondAttribute="centerY" constant="-3" id="RLY-9e-ouE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Ke-Xe-gc1" secondAttribute="trailing" id="RgS-ri-aAZ"/>
+                                                <constraint firstItem="TKd-4C-g51" firstAttribute="leading" secondItem="oV1-7B-lIb" secondAttribute="leadingMargin" id="mD2-vb-dPY"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="hgt-le-DIj"/>
                                                     <exclude reference="TKd-4C-g51"/>
                                                     <exclude reference="2Ke-Xe-gc1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="9kt-Fj-xmG"/>
+                                                    <exclude reference="RLY-9e-ouE"/>
+                                                    <exclude reference="mD2-vb-dPY"/>
+                                                    <exclude reference="6eP-Lt-FCQ"/>
+                                                    <exclude reference="RgS-ri-aAZ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="hgt-le-DIj"/>
                                                     <include reference="TKd-4C-g51"/>
                                                     <include reference="2Ke-Xe-gc1"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="9kt-Fj-xmG"/>
+                                                    <include reference="RLY-9e-ouE"/>
+                                                    <include reference="mD2-vb-dPY"/>
+                                                    <include reference="6eP-Lt-FCQ"/>
+                                                    <include reference="RgS-ri-aAZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="hgt-le-DIj" id="fe0-Y6-36S"/>
                                             <outlet property="priceLabel" destination="2Ke-Xe-gc1" id="rR9-pK-8ZX"/>
                                             <outlet property="symbolLabel" destination="TKd-4C-g51" id="W8s-yn-LQP"/>
                                             <segue destination="GSQ-5C-jmU" kind="show" id="arv-ls-6BK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                </variation>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="2u4-eq-iog" secondAttribute="centerY" constant="33.5" id="TdX-oJ-SSE"/>
+                            <constraint firstItem="q7n-kk-F4l" firstAttribute="top" secondItem="2u4-eq-iog" secondAttribute="bottom" id="Ycb-BI-Ssl"/>
+                            <constraint firstAttribute="centerX" secondItem="2u4-eq-iog" secondAttribute="centerX" id="qR5-Fb-th6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="TdX-oJ-SSE"/>
+                                <exclude reference="qR5-Fb-th6"/>
+                                <exclude reference="Ycb-BI-Ssl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="TdX-oJ-SSE"/>
+                                <include reference="qR5-Fb-th6"/>
+                                <include reference="Ycb-BI-Ssl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="2u4-eq-iog" id="Ewf-BQ-Bt0"/>
@@ -830,7 +860,7 @@
         <image name="logo_white" width="129" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rZi-qx-p85"/>
+        <segue reference="arv-ls-6BK"/>
         <segue reference="iQQ-cV-el9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53666853584756369" green="0.60000002384185791" blue="0.57686300952545577" alpha="1" colorSpace="calibratedRGB"/>

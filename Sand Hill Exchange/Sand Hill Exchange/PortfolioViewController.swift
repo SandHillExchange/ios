@@ -106,7 +106,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
                 let parsedResult: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
 
                 if let liquidVal = parsedResult.valueForKey("liquid_val") as? String {
-                    self.liquidLabel.text = liquidVal
+                    self.liquidLabel.text = "$"+liquidVal
 
                     if let portfolioDict = parsedResult.valueForKey("portfolio") as? NSArray {
                         
