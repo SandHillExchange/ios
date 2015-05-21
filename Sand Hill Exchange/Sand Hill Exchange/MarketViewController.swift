@@ -49,9 +49,7 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
         cell.symbolLabel.text = companies[row].symbol
         cell.nameLabel.text = companies[row].name
         
-        if companies[row].quote.dayChange != nil {
-            cell.priceLabel.updateChange(companies[row].quote.dayChange)
-        }
+        cell.priceLabel.updateChange(companies[row].quote.dayChange)
         cell.priceLabel.updatePrice(companies[row].quote.lastPrice)
         return cell
     }

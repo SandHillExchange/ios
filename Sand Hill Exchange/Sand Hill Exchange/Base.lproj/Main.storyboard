@@ -217,9 +217,10 @@
                                     <action selector="marketBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awg-Q3-gVb"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOq-gc-reg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOq-gc-reg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="MarketCell" id="Tjy-85-b9d" customClass="MarketCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -263,7 +264,7 @@
                                                     </variation>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="bWi-Xd-hje" secondAttribute="centerY" constant="-1" id="9bM-PH-UKI"/>
                                                 <constraint firstItem="xkG-FS-ixm" firstAttribute="trailingMargin" secondItem="mtn-1d-rwd" secondAttribute="trailingMargin" id="Q3I-pe-Ivv"/>
@@ -303,6 +304,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="ppriceLabel" destination="xkG-FS-ixm" id="HXx-GF-2Sk"/>
                                             <outlet property="pqtyLabel" destination="gtV-xr-jG4" id="iqX-oZ-Ft2"/>
@@ -312,7 +314,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="7" y="249" width="360" height="345"/>
+                                    <rect key="frame" x="7" y="249" width="360" height="364"/>
                                 </variation>
                             </tableView>
                         </subviews>
@@ -828,7 +830,7 @@
         <image name="logo_white" width="129" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="arv-ls-6BK"/>
+        <segue reference="rZi-qx-p85"/>
         <segue reference="iQQ-cV-el9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53666853584756369" green="0.60000002384185791" blue="0.57686300952545577" alpha="1" colorSpace="calibratedRGB"/>
