@@ -48,9 +48,12 @@ class PriceButton: UIButton {
         self.setTitle(price, forState: UIControlState.Normal)
     }
     func updateChange(newChange: Float) {
+        /*
         var formatter = NSNumberFormatter()
         formatter.numberStyle = .PercentStyle
         self.change = formatter.stringFromNumber(newChange)!
+        */
+        self.change = (NSString(format: "%.2f", newChange) as String) + "%" 
         self.setTitle(change, forState: UIControlState.Normal)
         
         // positive-green; negative-red
