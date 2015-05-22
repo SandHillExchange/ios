@@ -675,18 +675,34 @@
                                     <segue destination="mBz-C0-gM7" kind="presentation" modalTransitionStyle="coverVertical" id="iQQ-cV-el9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Q-ys-0wc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8v-md-32e">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.13340357729999999" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="K8v-md-32e" secondAttribute="centerX" id="14o-WQ-MoJ"/>
+                            <constraint firstItem="HbC-TW-103" firstAttribute="top" secondItem="K8v-md-32e" secondAttribute="bottom" constant="10" id="2Lo-pP-Bly"/>
                             <constraint firstAttribute="centerX" secondItem="wpQ-y7-xCu" secondAttribute="centerX" id="31P-aw-Hmg"/>
-                            <constraint firstItem="wpQ-y7-xCu" firstAttribute="top" secondItem="XD8-1L-mbI" secondAttribute="bottom" constant="28" id="3GC-Tc-IZP"/>
+                            <constraint firstItem="wpQ-y7-xCu" firstAttribute="top" secondItem="XD8-1L-mbI" secondAttribute="bottom" constant="40" id="3GC-Tc-IZP"/>
                             <constraint firstAttribute="centerX" secondItem="wu3-94-kTs" secondAttribute="centerX" id="DVj-Te-YU0"/>
                             <constraint firstAttribute="centerX" secondItem="HbC-TW-103" secondAttribute="centerX" constant="80" id="Eyk-4F-GLm"/>
-                            <constraint firstItem="Zlj-sD-ioP" firstAttribute="top" secondItem="wu3-94-kTs" secondAttribute="bottom" constant="32" id="JBY-3I-3vK"/>
+                            <constraint firstItem="Zlj-sD-ioP" firstAttribute="top" secondItem="K8v-md-32e" secondAttribute="bottom" constant="10" id="Fh5-ov-Sbg"/>
+                            <constraint firstItem="Q8Q-ys-0wc" firstAttribute="top" secondItem="wpQ-y7-xCu" secondAttribute="bottom" constant="30" id="JJp-ge-8zE"/>
                             <constraint firstAttribute="centerX" secondItem="Zlj-sD-ioP" secondAttribute="centerX" constant="-80" id="OAi-AX-HeU"/>
-                            <constraint firstItem="wu3-94-kTs" firstAttribute="top" secondItem="wpQ-y7-xCu" secondAttribute="bottom" constant="20" id="ngM-3y-EG6"/>
-                            <constraint firstItem="HbC-TW-103" firstAttribute="top" secondItem="wu3-94-kTs" secondAttribute="bottom" constant="32" id="piZ-Zq-AZC"/>
+                            <constraint firstItem="wu3-94-kTs" firstAttribute="top" secondItem="XD8-1L-mbI" secondAttribute="bottom" constant="20" id="TP6-68-mfS"/>
+                            <constraint firstItem="K8v-md-32e" firstAttribute="top" secondItem="Q8Q-ys-0wc" secondAttribute="bottom" constant="10" id="qKP-DL-rJo"/>
+                            <constraint firstAttribute="centerX" secondItem="Q8Q-ys-0wc" secondAttribute="centerX" id="wxG-4j-PiH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -694,16 +710,22 @@
                                 <exclude reference="wpQ-y7-xCu"/>
                                 <exclude reference="HbC-TW-103"/>
                                 <exclude reference="Zlj-sD-ioP"/>
+                                <exclude reference="Q8Q-ys-0wc"/>
+                                <exclude reference="K8v-md-32e"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DVj-Te-YU0"/>
-                                <exclude reference="ngM-3y-EG6"/>
-                                <exclude reference="Eyk-4F-GLm"/>
-                                <exclude reference="piZ-Zq-AZC"/>
-                                <exclude reference="JBY-3I-3vK"/>
-                                <exclude reference="OAi-AX-HeU"/>
                                 <exclude reference="31P-aw-Hmg"/>
                                 <exclude reference="3GC-Tc-IZP"/>
+                                <exclude reference="DVj-Te-YU0"/>
+                                <exclude reference="TP6-68-mfS"/>
+                                <exclude reference="JJp-ge-8zE"/>
+                                <exclude reference="wxG-4j-PiH"/>
+                                <exclude reference="2Lo-pP-Bly"/>
+                                <exclude reference="Eyk-4F-GLm"/>
+                                <exclude reference="14o-WQ-MoJ"/>
+                                <exclude reference="qKP-DL-rJo"/>
+                                <exclude reference="Fh5-ov-Sbg"/>
+                                <exclude reference="OAi-AX-HeU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -712,16 +734,22 @@
                                 <include reference="wpQ-y7-xCu"/>
                                 <include reference="HbC-TW-103"/>
                                 <include reference="Zlj-sD-ioP"/>
+                                <include reference="Q8Q-ys-0wc"/>
+                                <include reference="K8v-md-32e"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DVj-Te-YU0"/>
-                                <include reference="ngM-3y-EG6"/>
-                                <include reference="Eyk-4F-GLm"/>
-                                <include reference="piZ-Zq-AZC"/>
-                                <include reference="JBY-3I-3vK"/>
-                                <include reference="OAi-AX-HeU"/>
                                 <include reference="31P-aw-Hmg"/>
                                 <include reference="3GC-Tc-IZP"/>
+                                <include reference="DVj-Te-YU0"/>
+                                <include reference="TP6-68-mfS"/>
+                                <include reference="JJp-ge-8zE"/>
+                                <include reference="wxG-4j-PiH"/>
+                                <include reference="2Lo-pP-Bly"/>
+                                <include reference="Eyk-4F-GLm"/>
+                                <include reference="14o-WQ-MoJ"/>
+                                <include reference="qKP-DL-rJo"/>
+                                <include reference="Fh5-ov-Sbg"/>
+                                <include reference="OAi-AX-HeU"/>
                             </mask>
                         </variation>
                         <connections>
@@ -729,8 +757,10 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="changeLabel" destination="K8v-md-32e" id="fwX-Fy-tHq"/>
                         <outlet property="logoImage" destination="wpQ-y7-xCu" id="8Fb-nC-pWv"/>
                         <outlet property="nameLabel" destination="wu3-94-kTs" id="YNj-pY-zPc"/>
+                        <outlet property="priceLabel" destination="Q8Q-ys-0wc" id="R5u-hV-VSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDR-ff-Kyp" userLabel="First Responder" sceneMemberID="firstResponder"/>

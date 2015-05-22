@@ -17,11 +17,18 @@ class CompanyViewController: UIViewController {
     
     @IBOutlet weak var logoImage: UIImageView!
     
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(company.name)
+        println(company.quote.dayChange)
         nameLabel.text = company.name
+        priceLabel.text = NSString(format: "$%.2f", company.quote.lastPrice) as String
+        var changeAbs = NSString(format: "%.3f", company.quote.dayChange * company.quote.lastPrice) as String
+        changeLabel.text = changeAbs + " (" + (NSString(format: "%.2f", company.quote.dayChange*100) as String) + "%)"
+        
         
         let data = NSData(contentsOfURL: company.logoUrl!) //make sure your image in this url does exist, otherwise unwrap in a if let check
 
