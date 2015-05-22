@@ -22,8 +22,6 @@ class RoundButton: UIButton {
         
         //self.frame = CGRectMake(100, 160, 60, 60)
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 0.5 * self.layer.bounds.width
-        println(self.layer.bounds.width)
         self.setTitle("BUY", forState: UIControlState.Normal)
         
     }
@@ -39,4 +37,11 @@ class RoundButton: UIButton {
         }
     }
 
+    @IBInspectable var width: Float = 60.0 {
+        didSet {
+            self.frame = CGRectMake(100, 160, CGFloat(width), CGFloat(width))
+            self.layer.cornerRadius = CGFloat(0.5 * width)
+        }
+    }
+    
 }
