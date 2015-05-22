@@ -19,6 +19,7 @@ class CompanyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         println(company.name)
         nameLabel.text = company.name
         
@@ -53,6 +54,10 @@ class CompanyViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func swipeLeft(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
     
     /* functions from Order Modal */
     @IBAction func cancelOrder(segue:UIStoryboardSegue) {

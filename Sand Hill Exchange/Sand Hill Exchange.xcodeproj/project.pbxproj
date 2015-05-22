@@ -16,6 +16,7 @@
 		3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
 		3A01C5FA1B0D723500C4D84A /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */; };
 		3A01C5FD1B0E9CA600C4D84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A01C5FB1B0E9CA600C4D84A /* Main.storyboard */; };
+		3A01C5FF1B0EA28100C4D84A /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */; };
 		3A0CBA011AE983D7008A2C03 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */; };
 		3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA021AE984A3008A2C03 /* OrderModel.swift */; };
 		3A0CBA051AEAE519008A2C03 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA041AEAE519008A2C03 /* LoginController.swift */; };
@@ -87,6 +88,7 @@
 		3A01C5F31B0D471C00C4D84A /* SHXView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHXView.swift; sourceTree = "<group>"; };
 		3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		3A01C5FC1B0E9CA600C4D84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		3A0CBA001AE983D7008A2C03 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		3A0CBA021AE984A3008A2C03 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A0CBA041AEAE519008A2C03 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				3A01C5D51B0D46D500C4D84A /* Supporting Files */,
 				3A01C5F31B0D471C00C4D84A /* SHXView.swift */,
 				3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */,
+				3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */,
 			);
 			path = SHXView;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A01C5FF1B0EA28100C4D84A /* RoundButton.swift in Sources */,
 				3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */,
 				3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */,
 			);
