@@ -10,45 +10,25 @@ import UIKit
 
 let ORDER_URL: String = BASE_URL + "/trade/order"
 
-class OrderViewController: UIViewController, UITextFieldDelegate {
+class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate  {
     
     var company = Company()
     var buySell = Bool()  // true if buy, false if sell
     var storedKey = String()
-    var price : Float = 0.0
-    var qty : Float = 0.0
     var order = Order()
     
+    
+    var price : Float = 0.0
+    var qty : Float = 0.0
+    
     @IBOutlet weak var buySellLabel: UILabel!
-    @IBOutlet weak var symbolLabel: UILabel!
-    @IBOutlet weak var estCostLabel: UILabel!
-
-    @IBOutlet weak var priceField: UITextField!
     
-    @IBOutlet weak var qtyField: UITextField!
-    
-    @IBAction func reviewBtn(sender: AnyObject) {
-        // create order
-        order.companyKey = company.key
-        order.symbol = company.symbol
-        order.price = price
-        order.qty = Int(qty)
-        order.bidAsk = buySell
-        
-        // dismiss keyboard for review
-        qtyField.resignFirstResponder()
-        priceField.resignFirstResponder()
-        
-    }
+    @IBOutlet weak var orderForm: UITableView!
 
     
-    @IBAction func qtyField(sender: UITextField) {
-        updateCost()
-    }
-    
-    @IBAction func priceField(sender: UITextField) {
-        updateCost()
-    }
+    let qtyIdentifier = "qtyCell"
+    let priceIdentifier = "priceCell"
+    let costIdentifier = "costCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,37 +38,80 @@ class OrderViewController: UIViewController, UITextFieldDelegate {
         } else {
             buySellLabel.text = "SELL"
         }
+        orderForm.dataSource = self
+        orderForm.delegate = self
+        orderForm.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        priceField.delegate = self
-        priceField.keyboardType = UIKeyboardType.DecimalPad
-        
-        qtyField.delegate = self
-        qtyField.keyboardType = UIKeyboardType.NumberPad
-        qtyField.becomeFirstResponder()
-
         // get userkey
         var tempKey: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("userkey")
         if (tempKey != nil) { storedKey = tempKey as! String}
         
     }
+    
+    /*
+    func updateCost() {
+        qty = NSString(string: qtyCell.qtyField.text).floatValue
+        price = NSString(string: priceCell.priceField.text).floatValue
+        
+        var estCost = qty * price
+        costCell.estCostLabel.text = NSString(format: "%.2f", estCost) as String
+    }*/
 
+    @IBAction func reviewBtn(sender: AnyObject) {
+        // create order
+        order.companyKey = company.key
+        order.symbol = company.symbol
+        order.price = price
+        order.qty = Int(qty)
+        order.bidAsk = buySell
+        
+        // dismiss keyboard for review
+        var qtyCell = orderForm.dequeueReusableCellWithIdentifier(qtyIdentifier) as! QtyCell
+        qtyCell.qtyField.resignFirstResponder()
+        var priceCell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
+        priceCell.priceField.resignFirstResponder()
+        
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+                return cellAtIndexPath(indexPath)
+    }
+    func cellAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath==0 {
+            let cell = orderForm.dequeueReusableCellWithIdentifier(qtyIdentifier) as! QtyCell
+            cell.symbolLabel.text = company.symbol
+            cell.qtyField.delegate = self
+            cell.qtyField.keyboardType = UIKeyboardType.NumberPad
+            
+            cell.qtyField.becomeFirstResponder()
+            return cell as UITableViewCell
 
+        } else if indexPath==1 {
+            let cell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
+            cell.priceField.delegate = self
+            cell.priceField.keyboardType = UIKeyboardType.DecimalPad
+            return cell as UITableViewCell
+        } else {
+            let cell = orderForm.dequeueReusableCellWithIdentifier(costIdentifier) as! CostCell
+            return cell as UITableViewCell
+        }
+    }
+    
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func updateCost() {
-        qty = NSString(string: qtyField.text).floatValue
-        price = NSString(string: priceField.text).floatValue
-        
-        var estCost = qty * price
-        estCostLabel.text = NSString(format: "%.2f", estCost) as String
-    
-        
-    }
-
     
     // MARK: - Navigation
 
