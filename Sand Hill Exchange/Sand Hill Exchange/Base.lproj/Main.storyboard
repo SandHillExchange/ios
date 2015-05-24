@@ -855,7 +855,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="qtyCell" selectionStyle="default" indentationWidth="10" id="Lq3-km-bn5" customClass="QtyCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="qtyCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="qtyCell" id="Lq3-km-bn5" customClass="QtyCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lq3-km-bn5" id="Nda-RF-T4W">
@@ -909,7 +909,7 @@
                                             <outlet property="symbolLabel" destination="YQw-c9-XTT" id="SMX-Xa-ee0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="priceCell" selectionStyle="default" indentationWidth="10" id="K4x-uh-8HH" customClass="PriceCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="priceCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceCell" id="K4x-uh-8HH" customClass="PriceCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K4x-uh-8HH" id="EEk-FW-Aup">
@@ -947,8 +947,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="priceField" destination="2HP-e3-jhD" id="DnH-qB-mT2"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="costCell" selectionStyle="default" indentationWidth="10" id="img-ND-DAp" customClass="CostCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="costCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="costCell" id="img-ND-DAp" customClass="CostCell" customModule="Sand_Hill_Exchange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="img-ND-DAp" id="1RL-1Q-vlr">
@@ -988,7 +991,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="estCostLabel" destination="Q1S-cz-DHd" id="UrF-kU-DhJ"/>
+                                            <outlet property="estCostLabel" destination="Q1S-cz-DHd" id="Tgz-Qp-zTV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1116,7 +1119,7 @@
         <image name="logo_white" width="129" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="arv-ls-6BK"/>
+        <segue reference="rZi-qx-p85"/>
         <segue reference="m6Q-Nn-mqZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53666853584756369" green="0.60000002384185791" blue="0.57686300952545577" alpha="1" colorSpace="calibratedRGB"/>

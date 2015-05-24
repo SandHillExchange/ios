@@ -72,8 +72,11 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         priceCell.priceField.resignFirstResponder()
         
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(tableView: UITableView,
@@ -81,7 +84,9 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 return cellAtIndexPath(indexPath)
     }
     func cellAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath==0 {
+        println(indexPath.section)
+        switch (indexPath.section) {
+        case 0:
             let cell = orderForm.dequeueReusableCellWithIdentifier(qtyIdentifier) as! QtyCell
             cell.symbolLabel.text = company.symbol
             cell.qtyField.delegate = self
@@ -90,13 +95,14 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             cell.qtyField.becomeFirstResponder()
             return cell as UITableViewCell
 
-        } else if indexPath==1 {
+        case 1:
             let cell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
             cell.priceField.delegate = self
             cell.priceField.keyboardType = UIKeyboardType.DecimalPad
             return cell as UITableViewCell
-        } else {
+        default:
             let cell = orderForm.dequeueReusableCellWithIdentifier(costIdentifier) as! CostCell
+            cell.estCostLabel.text = "0.00"
             return cell as UITableViewCell
         }
     }
