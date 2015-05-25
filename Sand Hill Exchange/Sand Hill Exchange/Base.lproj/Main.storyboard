@@ -236,9 +236,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="129" y="12" width="27" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWi-Xd-hje">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -259,8 +256,7 @@
                                                             <exclude reference="sLu-Mo-ocW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="260" y="9" width="60" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="sLu-Mo-ocW"/>
                                                         </mask>
@@ -913,15 +909,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K4x-uh-8HH" id="EEk-FW-Aup">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so8-J9-zPw">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.50094927060000005" green="0.60000002379999995" blue="0.52565049919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="24" y="11" width="98" height="21"/>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9B-Vp-dRe">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -943,8 +930,7 @@
                                                             <exclude reference="9sP-MY-6OD"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="168" y="9" width="200" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="03o-gO-DFC"/>
                                                             <include reference="9sP-MY-6OD"/>
@@ -954,20 +940,33 @@
                                                         <action selector="priceField:" destination="mBz-C0-gM7" eventType="editingChanged" id="BLS-A9-uvw"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eg-lo-tSS">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="Market Price">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="marketLimitBtn:" destination="mBz-C0-gM7" eventType="touchUpInside" id="Z1W-n5-cWw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="J9B-Vp-dRe" secondAttribute="centerY" id="8SC-jS-1VX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2HP-e3-jhD" secondAttribute="trailing" id="H3f-ZN-c0s"/>
                                                 <constraint firstAttribute="centerY" secondItem="2HP-e3-jhD" secondAttribute="centerY" constant="-1.5" id="bsn-B9-EvX"/>
+                                                <constraint firstItem="5Eg-lo-tSS" firstAttribute="leading" secondItem="EEk-FW-Aup" secondAttribute="leadingMargin" constant="13" id="fdC-rz-uVb"/>
+                                                <constraint firstAttribute="centerY" secondItem="5Eg-lo-tSS" secondAttribute="centerY" constant="-2.5" id="tV4-l1-e3Y"/>
                                                 <constraint firstAttribute="centerX" secondItem="J9B-Vp-dRe" secondAttribute="centerX" id="zdn-Qr-NAt"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="so8-J9-zPw"/>
                                                     <exclude reference="J9B-Vp-dRe"/>
                                                     <exclude reference="2HP-e3-jhD"/>
+                                                    <exclude reference="5Eg-lo-tSS"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="fdC-rz-uVb"/>
+                                                    <exclude reference="tV4-l1-e3Y"/>
                                                     <exclude reference="H3f-ZN-c0s"/>
                                                     <exclude reference="bsn-B9-EvX"/>
                                                     <exclude reference="8SC-jS-1VX"/>
@@ -976,11 +975,13 @@
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="so8-J9-zPw"/>
                                                     <include reference="J9B-Vp-dRe"/>
                                                     <include reference="2HP-e3-jhD"/>
+                                                    <include reference="5Eg-lo-tSS"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="fdC-rz-uVb"/>
+                                                    <include reference="tV4-l1-e3Y"/>
                                                     <include reference="H3f-ZN-c0s"/>
                                                     <include reference="bsn-B9-EvX"/>
                                                     <include reference="8SC-jS-1VX"/>
@@ -990,6 +991,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="marketLimit" destination="5Eg-lo-tSS" id="fHX-ca-vb8"/>
                                             <outlet property="priceField" destination="2HP-e3-jhD" id="DnH-qB-mT2"/>
                                         </connections>
                                     </tableViewCell>

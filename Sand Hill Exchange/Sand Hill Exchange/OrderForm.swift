@@ -22,6 +22,7 @@ class QtyCell: UITableViewCell {
 
 class PriceCell: UITableViewCell {
     @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var marketLimit: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

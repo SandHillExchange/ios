@@ -14,4 +14,5 @@ class Order: NSObject{
     var price: Float!
     var qty: Int!
     var bidAsk: Bool!   // true = BUY, false = SELL
+    var market: Bool!   // true = MARKET PRICE, false = LIMIT
 }

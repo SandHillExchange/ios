@@ -9,6 +9,8 @@
 import UIKit
 
 let ORDER_URL: String = BASE_URL + "/trade/order"
+let MARKET_PRICE: Float = 9999.99
+let MARKET_SELL: Float = 0.0
 
 class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate  {
     
@@ -21,6 +23,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     var price : Float = 0.0
     var qty : Float = 0.0
+    var marketLimit :Bool = true //true when market price
     
     @IBOutlet weak var buySellLabel: UILabel!
     
@@ -61,15 +64,40 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         updateCost()
     }
 
+    @IBAction func marketLimitBtn(sender: AnyObject) {
+        // toggle between market and limit
+        marketLimit = !marketLimit
+        var idp = NSIndexPath(forRow: 0, inSection: 1)
+        let priceCell = orderForm.cellForRowAtIndexPath(idp) as! PriceCell
+        if marketLimit {
+            priceCell.marketLimit.setTitle("Market Price", forState: UIControlState.Normal)
+            priceCell.priceField.text = NSString(format: "%.2f", company.quote.lastPrice) as String!
+            priceCell.priceField.userInteractionEnabled = false
+            priceCell.priceField.resignFirstResponder()
+            var idx = NSIndexPath(forRow: 0, inSection: 0)
+            let qtyCell = orderForm.cellForRowAtIndexPath(idx) as! QtyCell
+            qtyCell.qtyField.becomeFirstResponder()
+            updateCost()
+        } else {
+            priceCell.marketLimit.setTitle("Limit Price", forState: UIControlState.Normal)
+            priceCell.priceField.userInteractionEnabled = true
+        }
+    }
     
 
     @IBAction func reviewBtn(sender: AnyObject) {
         // create order
         order.companyKey = company.key
         order.symbol = company.symbol
-        order.price = price
         order.qty = Int(qty)
         order.bidAsk = buySell
+        order.market = marketLimit
+        if marketLimit {
+            if buySell { order.price = MARKET_PRICE }
+            else { order.price = MARKET_SELL }
+        } else {
+            order.price = price
+        }
         
         // update summary
         orderSummary.text = "You are placing an (market/limit) order to buy %d share(s) of %s. Your order will be (placed after the market opens and) executed at the best available price."
