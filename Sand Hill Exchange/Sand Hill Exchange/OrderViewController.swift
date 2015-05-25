@@ -54,6 +54,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         var spacing:CGFloat = 60
         submitBtn.textContainerInset = UIEdgeInsets(top: spacing, left: 0, bottom: 0, right: 0)
         orderSummary.layer.cornerRadius = 10.0
+        orderSummary.textContainerInset = UIEdgeInsets(top: 0, left: CGFloat(10), bottom: 0, right: CGFloat(10))
     }
     
     @IBAction func qtyField(sender: AnyObject) {
@@ -100,7 +101,16 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }
         
         // update summary
-        orderSummary.text = "You are placing an (market/limit) order to buy %d share(s) of %s. Your order will be (placed after the market opens and) executed at the best available price."
+        var mlstring = "market"
+        var marketstring = "executed at the best available price."
+        if !marketLimit {
+            mlstring = "limit"
+            marketstring = "executed at $\(price) or better."
+        }
+        var bsstring = "buy"
+        if !buySell {bsstring = "sell"}
+        
+        orderSummary.text = "You are placing a \(mlstring) order to \(bsstring) \(Int(qty)) shares of \(company.symbol). Your order will be " + marketstring
         
         
         // dismiss keyboard for review
@@ -139,6 +149,9 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             let cell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
             cell.priceField.delegate = self
             cell.priceField.keyboardType = UIKeyboardType.DecimalPad
+            // default to market price
+            cell.priceField.text = NSString(format: "%.2f", company.quote.lastPrice) as String!
+            cell.priceField.userInteractionEnabled = false
             return cell as UITableViewCell
         default:
             let cell = orderForm.dequeueReusableCellWithIdentifier(costIdentifier) as! CostCell
