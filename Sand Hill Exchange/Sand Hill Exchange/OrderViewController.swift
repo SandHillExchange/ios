@@ -49,7 +49,6 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
     }
     
-
     @IBAction func qtyField(sender: AnyObject) {
         updateCost()
     }
@@ -68,10 +67,18 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         order.qty = Int(qty)
         order.bidAsk = buySell
         
+        // update summary
+        orderSummary.text = "You are placing an (market/limit) order to buy %d share(s) of %s. Your order will be (placed after the market opens and) executed at the best available price."
+        
+        
         // dismiss keyboard for review
-        var qtyCell = orderForm.dequeueReusableCellWithIdentifier(qtyIdentifier) as! QtyCell
+        var idx = NSIndexPath(forRow: 0, inSection: 0)
+        
+        let qtyCell = orderForm.cellForRowAtIndexPath(idx) as! QtyCell
         qtyCell.qtyField.resignFirstResponder()
-        var priceCell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
+        
+        var idp = NSIndexPath(forRow: 0, inSection: 1)
+        let priceCell = orderForm.cellForRowAtIndexPath(idp) as! PriceCell
         priceCell.priceField.resignFirstResponder()
         
     }
@@ -127,9 +134,14 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     @IBAction func cancelButton(sender: AnyObject) {
+        println("cancel")
         navigationController?.popViewControllerAnimated(true)
     }
     
+    
+    @IBAction func swipeSubmit(sender: AnyObject) {
+            println("swipe")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
