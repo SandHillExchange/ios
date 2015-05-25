@@ -233,9 +233,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="129" y="12" width="27" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWi-Xd-hje">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -256,8 +253,7 @@
                                                             <exclude reference="sLu-Mo-ocW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="260" y="9" width="60" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="sLu-Mo-ocW"/>
                                                         </mask>
@@ -847,9 +843,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="171" y="20" width="76" height="21"/>
-                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="orderForm" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="edT-kP-e7X">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -887,7 +880,7 @@
                                                         <rect key="frame" x="271" y="7" width="97" height="30"/>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="qtyField:" destination="mBz-C0-gM7" eventType="editingDidEnd" id="wCg-a9-sOn"/>
+                                                        <action selector="qtyField:" destination="mBz-C0-gM7" eventType="editingChanged" id="awg-U3-V08"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -926,6 +919,7 @@
                                                         <rect key="frame" x="270" y="8" width="97" height="30"/>
                                                     </variation>
                                                     <connections>
+                                                        <action selector="priceField:" destination="mBz-C0-gM7" eventType="editingChanged" id="BLS-A9-uvw"/>
                                                         <action selector="priceField:" destination="mBz-C0-gM7" eventType="editingDidEnd" id="tAS-4x-KXK"/>
                                                     </connections>
                                                 </textField>
@@ -1009,6 +1003,7 @@
                         <color key="backgroundColor" white="0.13340357729999999" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="lek-D4-qa2" secondAttribute="centerX" id="7ym-K9-6hy"/>
+                            <constraint firstItem="lek-D4-qa2" firstAttribute="top" secondItem="Q29-yZ-tP1" secondAttribute="bottom" constant="20" id="FEQ-46-CDc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1022,6 +1017,7 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7ym-K9-6hy"/>
+                                <exclude reference="FEQ-46-CDc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1036,6 +1032,7 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="7ym-K9-6hy"/>
+                                <include reference="FEQ-46-CDc"/>
                             </mask>
                         </variation>
                     </view>

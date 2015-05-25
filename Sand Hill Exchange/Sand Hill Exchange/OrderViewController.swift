@@ -50,14 +50,13 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
 
     @IBAction func qtyField(sender: AnyObject) {
-        let pointInTable = sender.convertPoint(sender.bounds.origin, toView: self.orderForm)
-        let textFieldIndexPath = self.orderForm.indexPathForRowAtPoint(pointInTable)
         updateCost()
     }
 
     @IBAction func priceField(sender: AnyObject) {
         updateCost()
     }
+
     
 
     @IBAction func reviewBtn(sender: AnyObject) {
