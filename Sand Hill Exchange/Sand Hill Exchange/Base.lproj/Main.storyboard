@@ -840,10 +840,11 @@
                                                         <rect key="frame" x="104" y="11" width="59" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-Im-E7Y">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-Im-E7Y">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="bpb-Hz-mkz"/>
+                                                        <constraint firstAttribute="height" constant="30" id="WwZ-gZ-CBe"/>
+                                                        <constraint firstAttribute="width" constant="200" id="bpb-Hz-mkz"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.50094927060000005" green="0.60000002379999995" blue="0.52565049919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -858,11 +859,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="WwZ-gZ-CBe"/>
                                                             <exclude reference="bpb-Hz-mkz"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
+                                                            <include reference="WwZ-gZ-CBe"/>
                                                             <include reference="bpb-Hz-mkz"/>
                                                         </mask>
                                                     </variation>
@@ -928,7 +931,8 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-e3-jhD">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="03o-gO-DFC"/>
+                                                        <constraint firstAttribute="width" constant="200" id="03o-gO-DFC"/>
+                                                        <constraint firstAttribute="height" constant="30" id="9sP-MY-6OD"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.50094927060000005" green="0.60000002379999995" blue="0.52565049919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -936,11 +940,14 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="03o-gO-DFC"/>
+                                                            <exclude reference="9sP-MY-6OD"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="168" y="9" width="200" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="03o-gO-DFC"/>
+                                                            <include reference="9sP-MY-6OD"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
