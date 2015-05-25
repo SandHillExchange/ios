@@ -1136,7 +1136,7 @@
                         <color key="backgroundColor" white="0.13340357729999999" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="d4P-Ef-tTS" firstAttribute="top" secondItem="Poq-Ga-vWa" secondAttribute="bottom" constant="10" id="77y-96-qwV"/>
+                            <constraint firstItem="d4P-Ef-tTS" firstAttribute="top" secondItem="Poq-Ga-vWa" secondAttribute="bottom" constant="4" id="77y-96-qwV"/>
                             <constraint firstItem="d4P-Ef-tTS" firstAttribute="width" secondItem="4lM-2D-JgU" secondAttribute="width" id="7Dd-0v-78c"/>
                             <constraint firstAttribute="centerX" secondItem="lek-D4-qa2" secondAttribute="centerX" id="7ym-K9-6hy"/>
                             <constraint firstItem="lRY-nO-URj" firstAttribute="left" secondItem="4lM-2D-JgU" secondAttribute="left" id="A4I-rV-vv9"/>
@@ -1147,7 +1147,7 @@
                             <constraint firstItem="YZc-O1-jGX" firstAttribute="top" secondItem="lRY-nO-URj" secondAttribute="bottom" id="cKT-uz-MZP"/>
                             <constraint firstAttribute="centerX" secondItem="edT-kP-e7X" secondAttribute="centerX" constant="0.5" id="mO1-aM-sB5"/>
                             <constraint firstItem="edT-kP-e7X" firstAttribute="width" secondItem="4lM-2D-JgU" secondAttribute="width" id="t9m-7P-NcC"/>
-                            <constraint firstItem="Poq-Ga-vWa" firstAttribute="leading" secondItem="4lM-2D-JgU" secondAttribute="leadingMargin" constant="20" id="tqa-ci-2u5"/>
+                            <constraint firstItem="Poq-Ga-vWa" firstAttribute="leading" secondItem="4lM-2D-JgU" secondAttribute="leadingMargin" constant="10" id="tqa-ci-2u5"/>
                             <constraint firstItem="o9h-FF-WBG" firstAttribute="top" secondItem="edT-kP-e7X" secondAttribute="bottom" constant="10" id="u2E-t9-3Nz"/>
                             <constraint firstItem="YZc-O1-jGX" firstAttribute="top" secondItem="d4P-Ef-tTS" secondAttribute="bottom" constant="50" id="uoP-PD-kjJ"/>
                             <constraint firstItem="edT-kP-e7X" firstAttribute="top" secondItem="lek-D4-qa2" secondAttribute="bottom" constant="50" id="w8k-FX-YeS"/>
