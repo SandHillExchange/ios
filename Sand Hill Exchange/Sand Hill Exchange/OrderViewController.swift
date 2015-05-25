@@ -17,7 +17,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     var storedKey = String()
     var order = Order()
     
-    @IBOutlet weak var orderSummary: UILabel!
+    @IBOutlet weak var orderSummary: UITextView!
     
     var price : Float = 0.0
     var qty : Float = 0.0
@@ -26,6 +26,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     @IBOutlet weak var orderForm: UITableView!
 
+    @IBOutlet weak var submitBtn: UITextView!
     
     let qtyIdentifier = "qtyCell"
     let priceIdentifier = "priceCell"
@@ -47,6 +48,9 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         var tempKey: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("userkey")
         if (tempKey != nil) { storedKey = tempKey as! String}
         
+        var spacing:CGFloat = 60
+        submitBtn.textContainerInset = UIEdgeInsets(top: spacing, left: 0, bottom: 0, right: 0)
+        orderSummary.layer.cornerRadius = 10.0
     }
     
     @IBAction func qtyField(sender: AnyObject) {
