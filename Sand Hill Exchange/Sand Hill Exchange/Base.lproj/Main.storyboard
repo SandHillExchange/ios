@@ -817,6 +817,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="36" y="387" width="303" height="197"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4A-RM-AJC">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -827,7 +830,7 @@
                                     <rect key="frame" x="16" y="11" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="cancelButton:" destination="mBz-C0-gM7" eventType="touchUpInside" id="qUr-4s-U8P"/>
+                                    <segue destination="TWI-wj-QcV" kind="unwind" identifier="cancelOrder" unwindAction="cancelOrder:" id="Aqi-yO-5wa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUYSELL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lek-D4-qa2">
@@ -952,7 +955,7 @@
                                                     <color key="textColor" red="0.50094927060000005" green="0.60000002379999995" blue="0.52565049919999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-e3-jhD">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-e3-jhD">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="03o-gO-DFC"/>
@@ -1130,7 +1133,7 @@
                             <constraint firstAttribute="centerX" secondItem="lek-D4-qa2" secondAttribute="centerX" id="7ym-K9-6hy"/>
                             <constraint firstItem="lek-D4-qa2" firstAttribute="top" secondItem="Q29-yZ-tP1" secondAttribute="bottom" constant="20" id="FEQ-46-CDc"/>
                             <constraint firstItem="EYl-Mu-Lp6" firstAttribute="leading" secondItem="4lM-2D-JgU" secondAttribute="leadingMargin" constant="20" id="PiN-x5-xrY"/>
-                            <constraint firstItem="Poq-Ga-vWa" firstAttribute="top" secondItem="o9h-FF-WBG" secondAttribute="bottom" constant="20" id="Xhl-sG-ohJ"/>
+                            <constraint firstItem="Poq-Ga-vWa" firstAttribute="top" secondItem="o9h-FF-WBG" secondAttribute="bottom" constant="30" id="Xhl-sG-ohJ"/>
                             <constraint firstAttribute="centerX" secondItem="kG4-wk-orP" secondAttribute="centerX" id="ZJE-02-UaZ"/>
                             <constraint firstAttribute="centerX" secondItem="edT-kP-e7X" secondAttribute="centerX" constant="0.5" id="mO1-aM-sB5"/>
                             <constraint firstItem="kG4-wk-orP" firstAttribute="width" secondItem="4lM-2D-JgU" secondAttribute="width" id="pbh-0Q-Alk"/>
@@ -1214,7 +1217,7 @@
                 <swipeGestureRecognizer direction="up" id="Uw7-pE-PKO">
                     <connections>
                         <action selector="swipeSubmit:" destination="mBz-C0-gM7" id="06a-5l-gZ9"/>
-                        <segue destination="TWI-wj-QcV" kind="unwind" unwindAction="confirmOrder:" id="Dlb-P7-ROa"/>
+                        <segue destination="TWI-wj-QcV" kind="unwind" identifier="confirmOrder" unwindAction="confirmOrder:" id="Dlb-P7-ROa"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

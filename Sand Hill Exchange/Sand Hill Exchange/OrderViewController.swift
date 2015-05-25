@@ -133,12 +133,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         costCell.estCostLabel.text = NSString(format: "%.2f", estCost) as String
     }
     
-    @IBAction func cancelButton(sender: AnyObject) {
-        println("cancel")
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
-    
+
     @IBAction func swipeSubmit(sender: AnyObject) {
             println("swipe")
     }
@@ -154,6 +149,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // show confirmation
+        if (segue.identifier == "confirmOrder") {
 
             var err: NSError?
             var params = ["symbol":order.symbol, "bidask":order.bidAsk, "price":order.price, "qty":String(order.qty)]
@@ -197,6 +193,9 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             }
             
             task.resume()
+        } else if (segue.identifier == "cancelOrder") {
+            println("cancel")
+        }
         
         
         // close modal
