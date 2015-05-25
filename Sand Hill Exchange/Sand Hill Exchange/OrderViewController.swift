@@ -17,6 +17,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     var storedKey = String()
     var order = Order()
     
+    @IBOutlet weak var orderSummary: UILabel!
     
     var price : Float = 0.0
     var qty : Float = 0.0

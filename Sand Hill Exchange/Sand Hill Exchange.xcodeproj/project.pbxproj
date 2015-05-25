@@ -26,6 +26,7 @@
 		3A9F46371B12A530007211CF /* QtyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46361B12A530007211CF /* QtyField.swift */; };
 		3A9F46391B12AB04007211CF /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */; };
 		3A9F463B1B12AB90007211CF /* TextFieldEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9F463A1B12AB90007211CF /* TextFieldEffects.h */; };
+		3A9F463D1B12B030007211CF /* SHXButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F463C1B12B030007211CF /* SHXButton.swift */; };
 		3AA29EC41AE4498700A906D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC31AE4498700A906D8 /* AppDelegate.swift */; };
 		3AA29EC91AE4498700A906D8 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC81AE4498700A906D8 /* PortfolioViewController.swift */; };
 		3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */; };
@@ -103,6 +104,7 @@
 		3A9F46361B12A530007211CF /* QtyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtyField.swift; sourceTree = "<group>"; };
 		3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		3A9F463A1B12AB90007211CF /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		3A9F463C1B12B030007211CF /* SHXButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHXButton.swift; sourceTree = "<group>"; };
 		3AA29EBE1AE4498700A906D8 /* Sand Hill Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sand Hill Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA29EC21AE4498700A906D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA29EC31AE4498700A906D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				3A9F46361B12A530007211CF /* QtyField.swift */,
 				3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */,
 				3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */,
+				3A9F463C1B12B030007211CF /* SHXButton.swift */,
 				3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */,
 				3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */,
 			);
@@ -462,6 +465,7 @@
 				3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */,
 				3A01C5FF1B0EA28100C4D84A /* RoundButton.swift in Sources */,
 				3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */,
+				3A9F463D1B12B030007211CF /* SHXButton.swift in Sources */,
 				3A9F46391B12AB04007211CF /* TextFieldsEffects.swift in Sources */,
 				3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */,
 			);

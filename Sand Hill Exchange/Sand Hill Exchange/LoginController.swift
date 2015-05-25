@@ -43,7 +43,7 @@ class LoginController: UIViewController {
             attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         pwField.attributedPlaceholder = NSAttributedString(string:"password",
             attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor()])
-        loginButton.layer.cornerRadius = 3.0;
+
         self.navigationController!.navigationBar.hidden = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
