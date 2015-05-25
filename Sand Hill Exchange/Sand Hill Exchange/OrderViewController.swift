@@ -48,14 +48,17 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
     }
     
-    /*
-    func updateCost() {
-        qty = NSString(string: qtyCell.qtyField.text).floatValue
-        price = NSString(string: priceCell.priceField.text).floatValue
-        
-        var estCost = qty * price
-        costCell.estCostLabel.text = NSString(format: "%.2f", estCost) as String
-    }*/
+
+    @IBAction func qtyField(sender: AnyObject) {
+        let pointInTable = sender.convertPoint(sender.bounds.origin, toView: self.orderForm)
+        let textFieldIndexPath = self.orderForm.indexPathForRowAtPoint(pointInTable)
+        updateCost()
+    }
+
+    @IBAction func priceField(sender: AnyObject) {
+        updateCost()
+    }
+    
 
     @IBAction func reviewBtn(sender: AnyObject) {
         // create order
@@ -84,7 +87,6 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 return cellAtIndexPath(indexPath)
     }
     func cellAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell {
-        println(indexPath.section)
         switch (indexPath.section) {
         case 0:
             let cell = orderForm.dequeueReusableCellWithIdentifier(qtyIdentifier) as! QtyCell
@@ -94,7 +96,6 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             
             cell.qtyField.becomeFirstResponder()
             return cell as UITableViewCell
-
         case 1:
             let cell = orderForm.dequeueReusableCellWithIdentifier(priceIdentifier) as! PriceCell
             cell.priceField.delegate = self
@@ -102,11 +103,28 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             return cell as UITableViewCell
         default:
             let cell = orderForm.dequeueReusableCellWithIdentifier(costIdentifier) as! CostCell
-            cell.estCostLabel.text = "0.00"
+            cell.estCostLabel.text = "$0.00"
             return cell as UITableViewCell
         }
     }
     
+    func updateCost() {
+        
+        var idx = NSIndexPath(forRow: 0, inSection: 0)
+        
+        let qtyCell = orderForm.cellForRowAtIndexPath(idx) as! QtyCell
+        qty = NSString(string: qtyCell.qtyField.text).floatValue
+        
+        var idp = NSIndexPath(forRow: 0, inSection: 1)
+        let priceCell = orderForm.cellForRowAtIndexPath(idp) as! PriceCell
+        price = NSString(string: priceCell.priceField.text).floatValue
+        
+        var estCost = qty * price
+        println(estCost)
+        var idc = NSIndexPath(forRow: 0, inSection: 2)
+        let costCell = orderForm.cellForRowAtIndexPath(idc) as! CostCell
+        costCell.estCostLabel.text = NSString(format: "%.2f", estCost) as String
+    }
     
     @IBAction func cancelButton(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)

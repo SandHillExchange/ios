@@ -18,11 +18,6 @@ class QtyCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBAction func qtyField(sender: UITextField) {
-        //updateCost()
-    }
-    
-    
 }
 
 class PriceCell: UITableViewCell {
@@ -31,9 +26,6 @@ class PriceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    @IBAction func priceField(sender: UITextField) {
-        //updateCost()
     }
 }
 

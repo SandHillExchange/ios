@@ -886,6 +886,9 @@
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="271" y="7" width="97" height="30"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="qtyField:" destination="mBz-C0-gM7" eventType="editingDidEnd" id="wCg-a9-sOn"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <variation key="default">
@@ -922,6 +925,9 @@
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="270" y="8" width="97" height="30"/>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="priceField:" destination="mBz-C0-gM7" eventType="editingDidEnd" id="tAS-4x-KXK"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so8-J9-zPw">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
