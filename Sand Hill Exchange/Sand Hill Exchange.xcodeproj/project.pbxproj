@@ -23,6 +23,9 @@
 		3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */; };
 		3A3A0B501B08163A00CE92A4 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */; };
 		3A3A0B521B08169000CE92A4 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B511B08169000CE92A4 /* MarketViewController.swift */; };
+		3A9F46371B12A530007211CF /* QtyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46361B12A530007211CF /* QtyField.swift */; };
+		3A9F46391B12AB04007211CF /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */; };
+		3A9F463B1B12AB90007211CF /* TextFieldEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9F463A1B12AB90007211CF /* TextFieldEffects.h */; };
 		3AA29EC41AE4498700A906D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC31AE4498700A906D8 /* AppDelegate.swift */; };
 		3AA29EC91AE4498700A906D8 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA29EC81AE4498700A906D8 /* PortfolioViewController.swift */; };
 		3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA29ECF1AE4498700A906D8 /* LaunchScreen.xib */; };
@@ -97,6 +100,9 @@
 		3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3A3A0B511B08169000CE92A4 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		3A9F46361B12A530007211CF /* QtyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtyField.swift; sourceTree = "<group>"; };
+		3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		3A9F463A1B12AB90007211CF /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		3AA29EBE1AE4498700A906D8 /* Sand Hill Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sand Hill Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA29EC21AE4498700A906D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA29EC31AE4498700A906D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,8 +159,11 @@
 			isa = PBXGroup;
 			children = (
 				3A01C5D71B0D46D500C4D84A /* SHXView.h */,
+				3A9F463A1B12AB90007211CF /* TextFieldEffects.h */,
 				3A01C5D51B0D46D500C4D84A /* Supporting Files */,
 				3A01C5F31B0D471C00C4D84A /* SHXView.swift */,
+				3A9F46361B12A530007211CF /* QtyField.swift */,
+				3A9F46381B12AB04007211CF /* TextFieldsEffects.swift */,
 				3A01C5F51B0D4AC400C4D84A /* PriceButton.swift */,
 				3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */,
 				3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */,
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A01C5D81B0D46D500C4D84A /* SHXView.h in Headers */,
+				3A9F463B1B12AB90007211CF /* TextFieldEffects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,9 +458,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9F46371B12A530007211CF /* QtyField.swift in Sources */,
 				3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */,
 				3A01C5FF1B0EA28100C4D84A /* RoundButton.swift in Sources */,
 				3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */,
+				3A9F46391B12AB04007211CF /* TextFieldsEffects.swift in Sources */,
 				3A01C5F61B0D4AC400C4D84A /* PriceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
