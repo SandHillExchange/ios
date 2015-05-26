@@ -9,11 +9,14 @@
 import UIKit
 
 class ConfirmViewController: UIViewController {
+    
 
+    
+    @IBOutlet weak var confirmLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

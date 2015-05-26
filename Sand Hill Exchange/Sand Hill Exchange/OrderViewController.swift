@@ -102,15 +102,15 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
         // update summary
         var mlstring = "market"
-        var marketstring = "executed at the best available price."
+        var marketstring = " will be executed at the best available price."
         if !marketLimit {
             mlstring = "limit"
-            marketstring = "executed at $\(price) or better."
+            marketstring = ", if executed, will execute at $\(price) or better."
         }
         var bsstring = "buy"
         if !buySell {bsstring = "sell"}
         
-        orderSummary.text = "You are placing a \(mlstring) order to \(bsstring) \(Int(qty)) shares of \(company.symbol). Your order will be " + marketstring
+        orderSummary.text = "You are placing a \(mlstring) order to \(bsstring) \(Int(qty)) shares of \(company.symbol). Your order" + marketstring
         
         
         // dismiss keyboard for review
