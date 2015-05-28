@@ -44,7 +44,7 @@ class PriceButton: UIButton {
         }
     }
     func updatePrice(newPrice: Float) {
-        self.price = NSString(format: "$%.2f", newPrice) as String
+        self.price = NSString(format: "$%.3f", newPrice) as String
         self.setTitle(price, forState: UIControlState.Normal)
     }
     func updateChange(newChange: Float) {

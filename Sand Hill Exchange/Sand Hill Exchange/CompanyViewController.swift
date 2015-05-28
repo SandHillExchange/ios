@@ -25,7 +25,7 @@ class CompanyViewController: UIViewController {
         
         println(company.quote.dayChange)
         nameLabel.text = company.name
-        priceLabel.text = NSString(format: "$%.2f", company.quote.lastPrice) as String
+        priceLabel.text = NSString(format: "$%.3f", company.quote.lastPrice) as String
         var changeAbs = NSString(format: "%.3f", company.quote.dayChange * company.quote.lastPrice) as String
         changeLabel.text = changeAbs + " (" + (NSString(format: "%.2f", company.quote.dayChange*100) as String) + "%)"
         
