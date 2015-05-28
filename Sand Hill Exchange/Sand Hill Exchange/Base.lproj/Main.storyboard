@@ -227,9 +227,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="129" y="12" width="27" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWi-Xd-hje">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -250,8 +247,7 @@
                                                             <exclude reference="sLu-Mo-ocW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="260" y="9" width="60" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="sLu-Mo-ocW"/>
                                                         </mask>
@@ -367,6 +363,7 @@
                     <navigationItem key="navigationItem" title="Sand Hill Exchange" id="RB4-0w-vMq"/>
                     <connections>
                         <outlet property="liquidLabel" destination="ilu-J8-N21" id="zzc-YQ-892"/>
+                        <outlet property="marketBtn" destination="Ea0-Gx-ike" id="RXS-pi-uao"/>
                         <outlet property="portfolioView" destination="uOq-gc-reg" id="l5g-9N-7uA"/>
                         <segue destination="Pev-64-hl3" kind="show" identifier="marketSegue" id="DTT-Lv-yrf"/>
                     </connections>
@@ -443,8 +440,7 @@
                                                             <exclude reference="tIC-Ym-qFM"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="260" y="11" width="60" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="tIC-Ym-qFM"/>
                                                         </mask>

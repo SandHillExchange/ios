@@ -11,6 +11,8 @@ import UIKit
 class MarketViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+
+    
     var companies = [Company]()
     
     let marketCellIdentifier = "MarketCell"

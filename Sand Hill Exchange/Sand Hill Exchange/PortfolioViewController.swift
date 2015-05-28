@@ -23,6 +23,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var liquidLabel: UILabel!
     
     @IBOutlet weak var portfolioView: UITableView!
+    @IBOutlet weak var marketBtn: UIButton!
     
     @IBAction func marketBtn(sender: UIButton) {
         if fetchDone {
@@ -35,6 +36,8 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.navigationController!.navigationBar.hidden = true
         portfolioView.tableFooterView = UIView(frame:CGRectZero)
+        
+        marketBtn.hidden = true
         
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")
@@ -175,6 +178,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
                         self.companies.append(c)
                     }
                     self.fetchDone = true
+                    self.marketBtn.hidden = false
                     
                 } else {
                     println("Cant find key 'data' in \(parsedResult)")

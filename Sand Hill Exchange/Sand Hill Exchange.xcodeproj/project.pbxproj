@@ -21,6 +21,7 @@
 		3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA021AE984A3008A2C03 /* OrderModel.swift */; };
 		3A0CBA051AEAE519008A2C03 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA041AEAE519008A2C03 /* LoginController.swift */; };
 		3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */; };
+		3A3838F41B17D5DD0050FCB3 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3A3838F31B17D5DD0050FCB3 /* fonts */; };
 		3A3A0B501B08163A00CE92A4 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */; };
 		3A3A0B521B08169000CE92A4 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B511B08169000CE92A4 /* MarketViewController.swift */; };
 		3A9F46371B12A530007211CF /* QtyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46361B12A530007211CF /* QtyField.swift */; };
@@ -99,6 +100,7 @@
 		3A0CBA021AE984A3008A2C03 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A0CBA041AEAE519008A2C03 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
+		3A3838F31B17D5DD0050FCB3 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3A3A0B511B08169000CE92A4 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		3A9F46361B12A530007211CF /* QtyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtyField.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		3AA29EC11AE4498700A906D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A3838F31B17D5DD0050FCB3 /* fonts */,
 				3AA29EC21AE4498700A906D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -444,6 +447,7 @@
 				3A01C5FD1B0E9CA600C4D84A /* Main.storyboard in Resources */,
 				3AA29EE71AE44C8100A906D8 /* Images.xcassets in Resources */,
 				3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */,
+				3A3838F41B17D5DD0050FCB3 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
