@@ -53,13 +53,17 @@ class PriceButton: UIButton {
         formatter.numberStyle = .PercentStyle
         self.change = formatter.stringFromNumber(newChange)!
         */
-        self.change = (NSString(format: "%.2f", newChange) as String) + "%" 
-        self.setTitle(change, forState: UIControlState.Normal)
         
         // positive-green; negative-red
+        println(newChange)
         if (newChange < 0.0) {
             self.backgroundColor  = UIColor(red:1.0, green:0.31, blue:0.31, alpha:1.0)
+            self.change = (NSString(format: "%.2f", newChange) as String) + "%"
+        } else {
+            self.backgroundColor  = UIColor(red:0.0, green:1.0, blue:0.6, alpha:1.0)
+            self.change = (NSString(format: "%.2f", newChange) as String) + "%"
         }
+        self.setTitle(change, forState: UIControlState.Normal)
     }
     
 }

@@ -51,7 +51,8 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
         let row = indexPath.row
         cell.symbolLabel.text = companies[row].symbol
         cell.nameLabel.text = companies[row].name
-        
+        // market data diff from portfolio data (terrible)
+        // so need to multiply % by 100
         cell.priceLabel.updateChange(companies[row].quote.dayChange*100)
         cell.priceLabel.updatePrice(companies[row].quote.lastPrice)
         return cell
