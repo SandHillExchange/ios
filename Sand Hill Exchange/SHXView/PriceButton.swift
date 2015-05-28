@@ -55,7 +55,6 @@ class PriceButton: UIButton {
         */
         
         // positive-green; negative-red
-        println(newChange)
         if (newChange < 0.0) {
             self.backgroundColor  = UIColor(red:1.0, green:0.31, blue:0.31, alpha:1.0)
             self.change = (NSString(format: "%.2f", newChange) as String) + "%"

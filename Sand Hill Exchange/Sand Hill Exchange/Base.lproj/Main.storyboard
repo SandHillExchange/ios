@@ -1261,70 +1261,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Submitted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-rT-mxJ">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7p-sC-0IV" customClass="SHXButton" customModule="SHXView">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcK-1Z-FEZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7p-sC-0IV" customClass="SHXButton" customModule="SHXView">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="MSY-30-3xB"/>
+                                            <constraint firstAttribute="height" constant="40" id="wYW-Y5-Mwq"/>
+                                        </constraints>
+                                        <state key="normal" title="OK">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnLabel" value="OK"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MSY-30-3xB"/>
+                                                <exclude reference="wYW-Y5-Mwq"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="MSY-30-3xB"/>
+                                                <include reference="wYW-Y5-Mwq"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="dismissModals:" destination="XSS-i6-YZW" eventType="touchUpInside" id="q1k-TS-drf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Submitted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-rT-mxJ">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.13340357729999999" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wYW-Y5-Mwq"/>
+                                    <constraint firstAttribute="centerX" secondItem="gea-rT-mxJ" secondAttribute="centerX" id="CkO-eG-LXr"/>
+                                    <constraint firstAttribute="bottom" secondItem="q7p-sC-0IV" secondAttribute="bottom" constant="26" id="Gw8-62-MWT"/>
+                                    <constraint firstAttribute="centerX" secondItem="q7p-sC-0IV" secondAttribute="centerX" id="PHS-vF-Ndc"/>
+                                    <constraint firstItem="gea-rT-mxJ" firstAttribute="top" secondItem="GcK-1Z-FEZ" secondAttribute="top" constant="47" id="kIr-ZD-HLD"/>
                                 </constraints>
-                                <state key="normal" title="OK">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="btnLabel" value="OK"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="q7p-sC-0IV"/>
+                                        <exclude reference="gea-rT-mxJ"/>
+                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="wYW-Y5-Mwq"/>
+                                        <exclude reference="CkO-eG-LXr"/>
+                                        <exclude reference="kIr-ZD-HLD"/>
+                                        <exclude reference="Gw8-62-MWT"/>
+                                        <exclude reference="PHS-vF-Ndc"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="q7p-sC-0IV"/>
+                                        <include reference="gea-rT-mxJ"/>
+                                    </mask>
                                     <mask key="constraints">
-                                        <include reference="wYW-Y5-Mwq"/>
+                                        <include reference="CkO-eG-LXr"/>
+                                        <include reference="kIr-ZD-HLD"/>
+                                        <include reference="Gw8-62-MWT"/>
+                                        <include reference="PHS-vF-Ndc"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="dismissModals:" destination="XSS-i6-YZW" eventType="touchUpInside" id="q1k-TS-drf"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="q7p-sC-0IV" secondAttribute="centerX" id="HWa-RW-fVn"/>
-                            <constraint firstAttribute="centerX" secondItem="gea-rT-mxJ" secondAttribute="centerX" id="Hlq-YI-fYG"/>
-                            <constraint firstAttribute="centerY" secondItem="q7p-sC-0IV" secondAttribute="centerY" id="TaU-U0-kPB"/>
-                            <constraint firstItem="gea-rT-mxJ" firstAttribute="top" secondItem="p1o-NI-As1" secondAttribute="bottom" constant="85" id="dNL-GO-L9P"/>
-                            <constraint firstItem="q7p-sC-0IV" firstAttribute="width" secondItem="gea-rT-mxJ" secondAttribute="width" id="gAc-BT-xNM"/>
+                            <constraint firstItem="GcK-1Z-FEZ" firstAttribute="leading" secondItem="LgH-a2-V1j" secondAttribute="leadingMargin" constant="-16" id="7eW-Rs-bVu"/>
+                            <constraint firstItem="QdK-bb-EIw" firstAttribute="top" secondItem="GcK-1Z-FEZ" secondAttribute="bottom" constant="224" id="FKd-QY-6PR"/>
+                            <constraint firstItem="GcK-1Z-FEZ" firstAttribute="top" secondItem="p1o-NI-As1" secondAttribute="bottom" constant="56" id="GBv-Cr-Pjb"/>
+                            <constraint firstItem="GcK-1Z-FEZ" firstAttribute="width" secondItem="LgH-a2-V1j" secondAttribute="width" id="VTE-qq-IFT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="gea-rT-mxJ"/>
-                                <exclude reference="q7p-sC-0IV"/>
+                                <exclude reference="GcK-1Z-FEZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Hlq-YI-fYG"/>
-                                <exclude reference="dNL-GO-L9P"/>
-                                <exclude reference="HWa-RW-fVn"/>
-                                <exclude reference="TaU-U0-kPB"/>
-                                <exclude reference="gAc-BT-xNM"/>
+                                <exclude reference="7eW-Rs-bVu"/>
+                                <exclude reference="GBv-Cr-Pjb"/>
+                                <exclude reference="VTE-qq-IFT"/>
+                                <exclude reference="FKd-QY-6PR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="gea-rT-mxJ"/>
-                                <include reference="q7p-sC-0IV"/>
+                                <include reference="GcK-1Z-FEZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Hlq-YI-fYG"/>
-                                <include reference="dNL-GO-L9P"/>
-                                <include reference="HWa-RW-fVn"/>
-                                <include reference="TaU-U0-kPB"/>
-                                <include reference="gAc-BT-xNM"/>
+                                <include reference="7eW-Rs-bVu"/>
+                                <include reference="GBv-Cr-Pjb"/>
+                                <include reference="VTE-qq-IFT"/>
+                                <include reference="FKd-QY-6PR"/>
                             </mask>
                         </variation>
                     </view>
