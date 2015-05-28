@@ -34,7 +34,10 @@ class MarketViewController: UIViewController, UITableViewDataSource, UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+    func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companies.count
     }

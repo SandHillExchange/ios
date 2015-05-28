@@ -71,10 +71,13 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return holdings.count
     }
+    func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            
             return cellAtIndexPath(indexPath)
     }
     func cellAtIndexPath(indexPath:NSIndexPath) -> MarketCell {
@@ -89,7 +92,6 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         
         return cell
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
