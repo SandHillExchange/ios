@@ -21,7 +21,9 @@
 		3A0CBA031AE984A3008A2C03 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA021AE984A3008A2C03 /* OrderModel.swift */; };
 		3A0CBA051AEAE519008A2C03 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CBA041AEAE519008A2C03 /* LoginController.swift */; };
 		3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */; };
-		3A3838F41B17D5DD0050FCB3 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3A3838F31B17D5DD0050FCB3 /* fonts */; };
+		3A3838F61B17D6F50050FCB3 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3838F51B17D6F50050FCB3 /* IconButton.swift */; };
+		3A3838F81B17DF2E0050FCB3 /* iconfonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3838F71B17DF2E0050FCB3 /* iconfonts.swift */; };
+		3A3838FC1B17E5780050FCB3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A3838FB1B17E5780050FCB3 /* FontAwesome.ttf */; };
 		3A3A0B501B08163A00CE92A4 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */; };
 		3A3A0B521B08169000CE92A4 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A0B511B08169000CE92A4 /* MarketViewController.swift */; };
 		3A9F46371B12A530007211CF /* QtyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F46361B12A530007211CF /* QtyField.swift */; };
@@ -100,7 +102,9 @@
 		3A0CBA021AE984A3008A2C03 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		3A0CBA041AEAE519008A2C03 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
-		3A3838F31B17D5DD0050FCB3 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		3A3838F51B17D6F50050FCB3 /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		3A3838F71B17DF2E0050FCB3 /* iconfonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iconfonts.swift; sourceTree = "<group>"; };
+		3A3838FB1B17E5780050FCB3 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../Sand Hill Exchange/FontAwesome.ttf"; sourceTree = "<group>"; };
 		3A3A0B4F1B08163A00CE92A4 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		3A3A0B511B08169000CE92A4 /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		3A9F46361B12A530007211CF /* QtyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtyField.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				3A9F463C1B12B030007211CF /* SHXButton.swift */,
 				3A01C5FE1B0EA28100C4D84A /* RoundButton.swift */,
 				3A32098D1B0EE5B9003E226F /* CompanyLogo.swift */,
+				3A3838F51B17D6F50050FCB3 /* IconButton.swift */,
+				3A3838F71B17DF2E0050FCB3 /* iconfonts.swift */,
 			);
 			path = SHXView;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 		3A01C5D51B0D46D500C4D84A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A3838FB1B17E5780050FCB3 /* FontAwesome.ttf */,
 				3A01C5D61B0D46D500C4D84A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -267,7 +274,6 @@
 		3AA29EC11AE4498700A906D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3A3838F31B17D5DD0050FCB3 /* fonts */,
 				3AA29EC21AE4498700A906D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -445,9 +451,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A01C5FD1B0E9CA600C4D84A /* Main.storyboard in Resources */,
+				3A3838FC1B17E5780050FCB3 /* FontAwesome.ttf in Resources */,
 				3AA29EE71AE44C8100A906D8 /* Images.xcassets in Resources */,
 				3AA29ED11AE4498700A906D8 /* LaunchScreen.xib in Resources */,
-				3A3838F41B17D5DD0050FCB3 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,8 +471,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3838F61B17D6F50050FCB3 /* IconButton.swift in Sources */,
 				3A9F46371B12A530007211CF /* QtyField.swift in Sources */,
 				3A32098E1B0EE5B9003E226F /* CompanyLogo.swift in Sources */,
+				3A3838F81B17DF2E0050FCB3 /* iconfonts.swift in Sources */,
 				3A01C5FF1B0EA28100C4D84A /* RoundButton.swift in Sources */,
 				3A01C5F41B0D471C00C4D84A /* SHXView.swift in Sources */,
 				3A9F463D1B12B030007211CF /* SHXButton.swift in Sources */,

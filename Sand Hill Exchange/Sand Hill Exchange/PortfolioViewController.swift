@@ -38,7 +38,7 @@ class PortfolioViewController: UIViewController, UITableViewDataSource, UITableV
         portfolioView.tableFooterView = UIView(frame:CGRectZero)
         
         marketBtn.hidden = true
-        
+           
         // start out with previously-stored portfolio
         let storedPortfolio: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("portfolio")
 

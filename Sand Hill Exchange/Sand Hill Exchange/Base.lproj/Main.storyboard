@@ -304,11 +304,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-Gx-ike">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-Gx-ike" customClass="IconButton" customModule="SHXView">
                                 <rect key="frame" x="250" y="147" width="48" height="30"/>
-                                <state key="normal" title="Market">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="26"/>
+                                <state key="normal" title="Market"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="btnLabel" value="f080"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="btnString" value="fa-bar-chart"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="313" y="74" width="48" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="marketBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awg-Q3-gVb"/>
                                 </connections>
