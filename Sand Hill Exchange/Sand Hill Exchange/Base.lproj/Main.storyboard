@@ -227,6 +227,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="129" y="12" width="27" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWi-Xd-hje">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -247,7 +250,8 @@
                                                             <exclude reference="sLu-Mo-ocW"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="260" y="9" width="60" height="30"/>
                                                         <mask key="constraints">
                                                             <include reference="sLu-Mo-ocW"/>
                                                         </mask>
@@ -312,9 +316,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="btnLabel" value="f080"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="btnString" value="fa-bar-chart"/>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" misplaced="YES">
+                                <variation key="widthClass=compact">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <rect key="frame" x="313" y="74" width="48" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="marketBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awg-Q3-gVb"/>
@@ -396,9 +399,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.53666853579999996" green="0.60000002379999995" blue="0.57686300950000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="79" width="107" height="15"/>
-                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="bottom" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-eq-iog">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -525,9 +525,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="btnString" value="fa-bars"/>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="45" width="114" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="backButton:" destination="Pev-64-hl3" eventType="touchUpInside" id="OyO-Qh-390"/>
                                 </connections>
@@ -550,14 +547,14 @@
                                 <exclude reference="bKn-Di-Jf9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="kVx-Iy-LRK"/>
-                                <exclude reference="uUB-az-9NC"/>
                                 <exclude reference="LKM-ly-aVV"/>
                                 <exclude reference="njG-dc-Rud"/>
                                 <exclude reference="9MO-vP-VFI"/>
                                 <exclude reference="MKd-tu-t8P"/>
                                 <exclude reference="Oye-4k-UmR"/>
                                 <exclude reference="Ycb-BI-Ssl"/>
+                                <exclude reference="kVx-Iy-LRK"/>
+                                <exclude reference="uUB-az-9NC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -566,14 +563,14 @@
                                 <include reference="bKn-Di-Jf9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="kVx-Iy-LRK"/>
-                                <include reference="uUB-az-9NC"/>
                                 <include reference="LKM-ly-aVV"/>
                                 <include reference="njG-dc-Rud"/>
                                 <include reference="9MO-vP-VFI"/>
                                 <include reference="MKd-tu-t8P"/>
                                 <include reference="Oye-4k-UmR"/>
                                 <include reference="Ycb-BI-Ssl"/>
+                                <include reference="kVx-Iy-LRK"/>
+                                <include reference="uUB-az-9NC"/>
                             </mask>
                         </variation>
                     </view>
@@ -1162,8 +1159,11 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="btnString" value="fa-pencil"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="31" width="30" height="30"/>
+                                    <rect key="frame" x="16" y="27" width="30" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="editOrder:" destination="mBz-C0-gM7" eventType="touchUpInside" id="rpC-eu-Acm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.13340357729999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -1252,8 +1252,10 @@
                     </view>
                     <connections>
                         <outlet property="buySellLabel" destination="lek-D4-qa2" id="ACa-Ar-Y5e"/>
+                        <outlet property="editBtn" destination="jsZ-u6-I1A" id="HSL-ar-z4a"/>
                         <outlet property="orderForm" destination="edT-kP-e7X" id="ZBb-ZT-p1P"/>
                         <outlet property="orderSummary" destination="d4P-Ef-tTS" id="vfe-Oy-MIM"/>
+                        <outlet property="reviewBtn" destination="o9h-FF-WBG" id="EwC-zc-beT"/>
                         <outlet property="submitBtn" destination="lRY-nO-URj" id="Pfi-iy-DLP"/>
                     </connections>
                 </viewController>
@@ -1363,10 +1365,10 @@
                                 <exclude reference="GcK-1Z-FEZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FKd-QY-6PR"/>
                                 <exclude reference="7eW-Rs-bVu"/>
                                 <exclude reference="GBv-Cr-Pjb"/>
                                 <exclude reference="VTE-qq-IFT"/>
-                                <exclude reference="FKd-QY-6PR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1374,10 +1376,10 @@
                                 <include reference="GcK-1Z-FEZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FKd-QY-6PR"/>
                                 <include reference="7eW-Rs-bVu"/>
                                 <include reference="GBv-Cr-Pjb"/>
                                 <include reference="VTE-qq-IFT"/>
-                                <include reference="FKd-QY-6PR"/>
                             </mask>
                         </variation>
                     </view>

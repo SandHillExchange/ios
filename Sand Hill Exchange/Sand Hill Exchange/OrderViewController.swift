@@ -30,6 +30,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var orderForm: UITableView!
 
     @IBOutlet weak var submitBtn: UITextView!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var reviewBtn: UIButton!
     
     let qtyIdentifier = "qtyCell"
     let priceIdentifier = "priceCell"
@@ -55,6 +57,17 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         submitBtn.textContainerInset = UIEdgeInsets(top: spacing, left: 0, bottom: 0, right: 0)
         orderSummary.layer.cornerRadius = 10.0
         orderSummary.textContainerInset = UIEdgeInsets(top: 0, left: CGFloat(10), bottom: 0, right: CGFloat(10))
+        
+        // hide edit button until review order
+        editBtn.hidden = true
+        reviewBtn.hidden = true
+    }
+    
+    @IBAction func editOrder(sender: AnyObject) {
+        //show keyboard again
+        var idx = NSIndexPath(forRow: 0, inSection: 0)
+        let qtyCell = orderForm.cellForRowAtIndexPath(idx) as! QtyCell
+        qtyCell.qtyField.becomeFirstResponder()
     }
     
     @IBAction func qtyField(sender: AnyObject) {
@@ -123,6 +136,9 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         let priceCell = orderForm.cellForRowAtIndexPath(idp) as! PriceCell
         priceCell.priceField.resignFirstResponder()
         
+        // show edit button in case they want to change
+        editBtn.hidden = false
+        
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
@@ -172,6 +188,10 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         price = NSString(string: priceCell.priceField.text).floatValue
         
         var estCost = qty * price
+        
+        if (estCost != 0.0) {
+            reviewBtn.hidden = false
+        }
         println(estCost)
         var idc = NSIndexPath(forRow: 0, inSection: 2)
         let costCell = orderForm.cellForRowAtIndexPath(idc) as! CostCell
