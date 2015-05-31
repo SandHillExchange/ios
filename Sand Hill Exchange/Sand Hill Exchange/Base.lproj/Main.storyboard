@@ -1252,6 +1252,7 @@
                     </view>
                     <connections>
                         <outlet property="buySellLabel" destination="lek-D4-qa2" id="ACa-Ar-Y5e"/>
+                        <outlet property="closeBtn" destination="o4A-RM-AJC" id="EhY-D8-A3H"/>
                         <outlet property="editBtn" destination="jsZ-u6-I1A" id="HSL-ar-z4a"/>
                         <outlet property="orderForm" destination="edT-kP-e7X" id="ZBb-ZT-p1P"/>
                         <outlet property="orderSummary" destination="d4P-Ef-tTS" id="vfe-Oy-MIM"/>

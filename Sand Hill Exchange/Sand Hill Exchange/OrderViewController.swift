@@ -32,6 +32,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var submitBtn: UITextView!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var reviewBtn: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
     
     let qtyIdentifier = "qtyCell"
     let priceIdentifier = "priceCell"
@@ -68,6 +69,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         var idx = NSIndexPath(forRow: 0, inSection: 0)
         let qtyCell = orderForm.cellForRowAtIndexPath(idx) as! QtyCell
         qtyCell.qtyField.becomeFirstResponder()
+        editBtn.hidden = true
+        closeBtn.hidden = false
     }
     
     @IBAction func qtyField(sender: AnyObject) {
@@ -138,6 +141,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
         // show edit button in case they want to change
         editBtn.hidden = false
+        closeBtn.hidden = true
         
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
